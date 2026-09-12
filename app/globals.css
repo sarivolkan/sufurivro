@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+
+  --brand-navy: #0b2a66;
+  --brand-blue: #146ef5;
+  --brand-light-blue: #eaf4ff;
+  --brand-orange: #ff7a1a;
+  --brand-border: #dbeafe;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: #bfdbfe;
+  color: #0b2a66;
+}
+
+.sufurivro-gradient {
+  background:
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(20, 110, 245, 0.16),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f6faff 48%,
+      #eaf4ff 100%
+    );
+}
+
+.soft-grid {
+  background-image:
+    linear-gradient(rgba(20, 110, 245, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 110, 245, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.brand-shadow {
+  box-shadow:
+    0 20px 50px rgba(15, 42, 102, 0.1),
+    0 8px 20px rgba(20, 110, 245, 0.08);
+}
+
+.orange-glow {
+  box-shadow: 0 10px 28px rgba(255, 122, 26, 0.26);
+}
