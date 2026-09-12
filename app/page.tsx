@@ -84,23 +84,13 @@ export default function Home() {
 
       <header className="sticky top-0 z-50 border-b border-blue-50 bg-white/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[1450px] items-center justify-between px-6 py-4 lg:px-10">
-          <a href="#" className="flex items-center gap-3">
-            <div className="relative flex h-11 w-11 items-center justify-center">
-              <div className="absolute h-10 w-7 -rotate-[28deg] rounded-[50%] bg-gradient-to-br from-blue-800 to-blue-400" />
-              <div className="absolute h-7 w-10 rotate-[28deg] rounded-[50%] bg-gradient-to-br from-blue-500 to-blue-200" />
-              <div className="relative h-3.5 w-3.5 rounded-full bg-orange-400" />
-            </div>
-
-            <div>
-              <div className="text-[21px] font-black leading-none tracking-tight text-blue-950">
-                SUFURIVRO
-              </div>
-
-              <div className="mt-1 text-[10px] font-medium tracking-[0.15em] text-slate-400">
-                SERVICE INTELLIGENCE PLATFORM
-              </div>
-            </div>
-          </a>
+      <a href="#" className="flex items-center">
+  <img
+    src="/logo/logo.png"
+    alt="SUFURIVRO"
+    className="h-[52px] w-auto object-contain"
+  />
+</a>
 
           <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 lg:flex">
             <a href="#product" className="hover:text-blue-600">
@@ -1087,23 +1077,13 @@ export default function Home() {
 
       <footer className="border-t border-blue-50 bg-white">
         <div className="mx-auto flex max-w-[1450px] flex-col gap-8 px-6 py-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
-          <div className="flex items-center gap-3">
-            <div className="relative flex h-9 w-9 items-center justify-center">
-              <div className="absolute h-8 w-6 -rotate-[28deg] rounded-[50%] bg-gradient-to-br from-blue-800 to-blue-400" />
-              <div className="absolute h-6 w-8 rotate-[28deg] rounded-[50%] bg-gradient-to-br from-blue-500 to-blue-200" />
-              <div className="relative h-3 w-3 rounded-full bg-orange-400" />
-            </div>
-
-            <div>
-              <div className="font-black text-blue-950">
-                SUFURIVRO
-              </div>
-
-              <div className="text-[10px] tracking-[0.14em] text-slate-400">
-                SERVICE INTELLIGENCE PLATFORM
-              </div>
-            </div>
-          </div>
+        <div className="flex items-center">
+  <img
+    src="/logo/logo.png"
+    alt="SUFURIVRO"
+    className="h-[44px] w-auto object-contain"
+  />
+</div>
 
           <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-500">
             <a href="#product">Product</a>
