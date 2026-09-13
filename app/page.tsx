@@ -109,6 +109,12 @@ export default function Home() {
 >
   ITSM Analytics
 </a>
+<a
+  href="/microsoft-fabric-itsm"
+  className="hover:text-blue-600"
+>
+  Fabric + ITSM
+</a>
             <a href="#integrations" className="hover:text-blue-600">
               Integrations
             </a>
@@ -1119,6 +1125,21 @@ export default function Home() {
 
           <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-500">
             <a href="#product">Product</a>
+                  <a
+        href="/servicenow-power-bi"
+        className="font-medium text-blue-700"
+      >
+        ServiceNow Power BI
+      </a>
+      <a href="/itsm-analytics">
+  ITSM Analytics
+</a>
+<a
+  href="/microsoft-fabric-itsm"
+  className="hover:text-blue-600"
+>
+  Fabric + ITSM
+</a>
             <a href="#integrations">Integrations</a>
             <a href="#reporting">Reporting</a>
             <a href="#dashboards">Dashboards</a>

@@ -759,7 +759,7 @@ export default function MicrosoftFabricITSMPage() {
               href="/microsoft-fabric-itsm"
               className="font-medium text-blue-700"
             >
-              Microsoft Fabric + ITSM
+              Fabric + ITSM
             </a>
 
             <a href="/#integrations">Integrations</a>
