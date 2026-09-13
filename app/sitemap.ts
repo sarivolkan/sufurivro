@@ -32,6 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   changeFrequency: "weekly",
   priority: 0.9,
 },
+{
+  url: "https://sufurivro.com/dashboards",
+  lastModified: new Date(),
+  changeFrequency: "weekly",
+  priority: 0.9,
+},
         {
     url: "https://sufurivro.com/microsoft-fabric-itsm",
     lastModified: new Date(),
