@@ -20,7 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
-
+{
+  url: "https://sufurivro.com/self-service-reporting",
+  lastModified: new Date(),
+  changeFrequency: "weekly",
+  priority: 0.9,
+},
         {
     url: "https://sufurivro.com/microsoft-fabric-itsm",
     lastModified: new Date(),

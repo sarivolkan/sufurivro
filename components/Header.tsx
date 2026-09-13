@@ -69,12 +69,12 @@ export default function Header({ active }: HeaderProps) {
             Integrations
           </a>
 
-          <a
-            href="/#reporting"
-            className={active === "reporting" ? selected : normal}
-          >
-            Self-Service Reporting
-          </a>
+        <a
+  href="/self-service-reporting"
+  className={active === "reporting" ? selected : normal}
+>
+  Self-Service Reporting
+</a>
 
           <a
             href="/#dashboards"

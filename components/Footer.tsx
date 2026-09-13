@@ -74,11 +74,11 @@ export default function Footer({ active }: FooterProps) {
           </a>
 
           <a
-            href="/#reporting"
-            className={active === "reporting" ? selected : normal}
-          >
-            Reporting
-          </a>
+  href="/self-service-reporting"
+  className={active === "reporting" ? selected : normal}
+>
+  Self-Service Reporting
+</a>
 
           <a
             href="/#dashboards"
