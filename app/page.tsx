@@ -102,6 +102,13 @@ export default function Home() {
   >
     ServiceNow Power BI
   </a>
+
+  <a
+  href="/itsm-analytics"
+  className="hover:text-blue-600"
+>
+  ITSM Analytics
+</a>
             <a href="#integrations" className="hover:text-blue-600">
               Integrations
             </a>
