@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 import {
   ArrowRight,
-  Building2,
   CalendarDays,
   Check,
   Headphones,
@@ -36,6 +36,47 @@ export const metadata: Metadata = {
   },
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://sufurivro.com/contact#faq",
+  url: "https://sufurivro.com/contact",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How quickly will I get a response?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Our team aims to respond to business inquiries within one business day.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Who should I contact for a product demo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Use the contact form and select a demo request in your message. Our team will route your request to the right specialist.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I talk to a real person?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. SUFURIVRO sales, technical and partnership inquiries are handled by our team.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you offer enterprise or custom solutions?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. SUFURIVRO can be tailored to different ITSM platforms, reporting models and enterprise analytics requirements.",
+      },
+    },
+  ],
+};
+
 const ContactCard = ({
   icon,
   title,
@@ -43,7 +84,7 @@ const ContactCard = ({
   action,
   href,
 }: {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   text: string;
   action: string;
@@ -77,7 +118,7 @@ const Reason = ({
   title,
   text,
 }: {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   text: string;
 }) => (
@@ -87,9 +128,13 @@ const Reason = ({
     </div>
 
     <div>
-      <div className="text-[14px] font-black text-[#102965]">{title}</div>
+      <div className="text-[14px] font-black text-[#102965]">
+        {title}
+      </div>
 
-      <p className="mt-1 text-[12px] leading-5 text-[#607690]">{text}</p>
+      <p className="mt-1 text-[12px] leading-5 text-[#607690]">
+        {text}
+      </p>
     </div>
   </div>
 );
@@ -97,8 +142,17 @@ const Reason = ({
 export default function ContactPage() {
   return (
     <main className="overflow-hidden bg-white text-slate-900">
+      {/* FAQ SCHEMA */}
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+
       {/* =====================================================
-          SHARED HEADER
+          HEADER
       ====================================================== */}
 
       <Header active="contact" />
@@ -160,38 +214,46 @@ export default function ContactPage() {
 
             <div className="mt-7 flex flex-wrap gap-x-8 gap-y-3 text-[12px] text-[#526a91]">
               <div className="flex items-center gap-2">
-                <Check size={15} className="text-blue-600" strokeWidth={3} />
+                <Check
+                  size={15}
+                  className="text-blue-600"
+                  strokeWidth={3}
+                />
                 Fast response
               </div>
 
               <div className="flex items-center gap-2">
-                <Check size={15} className="text-blue-600" strokeWidth={3} />
+                <Check
+                  size={15}
+                  className="text-blue-600"
+                  strokeWidth={3}
+                />
                 No pressure
               </div>
 
               <div className="flex items-center gap-2">
-                <Check size={15} className="text-blue-600" strokeWidth={3} />
+                <Check
+                  size={15}
+                  className="text-blue-600"
+                  strokeWidth={3}
+                />
                 Enterprise-ready
               </div>
             </div>
           </div>
 
-          {/* RIGHT VISUAL */}
+          {/* RIGHT */}
 
           <div className="relative mx-auto min-h-[350px] w-full max-w-[620px]">
             <div className="absolute left-[80px] top-[5px] h-[280px] w-[310px] rounded-[22px] bg-blue-100/70" />
 
-            {/* PHOTO */}
-
             <div className="absolute left-[160px] top-[25px] z-10 overflow-hidden rounded-[20px] border-[7px] border-white shadow-[0_24px_60px_rgba(30,70,130,.16)]">
               <img
                 src="/images/contact-team.png"
-                alt="SUFURIVRO customer team"
+                alt="SUFURIVRO team"
                 className="h-[240px] w-[245px] object-cover"
               />
             </div>
-
-            {/* TOP LEFT CARD */}
 
             <div className="absolute left-[15px] top-[45px] z-20 w-[165px] rounded-[16px] border border-blue-100 bg-white px-5 py-5 shadow-[0_12px_30px_rgba(30,70,130,.10)]">
               <div className="text-[12px] font-black leading-5 text-[#102965]">
@@ -200,11 +262,11 @@ export default function ContactPage() {
                 Real solutions.
                 <br />
                 That&apos;s{" "}
-                <span className="text-blue-600">SUFURIVRO.</span>
+                <span className="text-blue-600">
+                  SUFURIVRO.
+                </span>
               </div>
             </div>
-
-            {/* BOTTOM LEFT CARD */}
 
             <div className="absolute bottom-[10px] left-[20px] z-20 w-[170px] rounded-[16px] border border-blue-100 bg-white p-5 shadow-[0_12px_30px_rgba(30,70,130,.10)]">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600">
@@ -213,13 +275,13 @@ export default function ContactPage() {
 
               <div className="mt-4 text-[15px] font-black text-[#102965]">
                 A partner in
-                <span className="block">your growth</span>
+                <span className="block">
+                  your growth
+                </span>
               </div>
 
               <div className="mt-4 h-[3px] w-14 rounded-full bg-blue-500" />
             </div>
-
-            {/* RIGHT SERVICES CARD */}
 
             <div className="absolute right-[0px] top-[80px] z-20 w-[180px] rounded-[16px] border border-blue-100 bg-white p-5 shadow-[0_12px_30px_rgba(30,70,130,.10)]">
               <div className="space-y-4">
@@ -315,10 +377,13 @@ export default function ContactPage() {
       </section>
 
       {/* =====================================================
-          FORM + CONTACT INFO
+          FORM + INFO
       ====================================================== */}
 
-      <section id="contact-form" className="pb-14">
+      <section
+        id="contact-form"
+        className="pb-14"
+      >
         <div className="mx-auto grid max-w-[1450px] gap-5 px-6 lg:grid-cols-[1.05fr_.85fr] lg:px-10">
           {/* FORM */}
 
@@ -428,7 +493,7 @@ export default function ContactPage() {
                     href="mailto:hello@sufurivro.com"
                     className="mt-1 block text-[15px] font-black text-blue-600"
                   >
-                    info@datamart.com.tr
+                    hello@sufurivro.com
                   </a>
 
                   <div className="mt-1 text-[11px] text-[#607690]">
@@ -472,9 +537,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="mt-1 text-[12px] leading-5 text-[#607690]">
-                    Deniz Caddesi 
-Muallimköy Tek. Gel. Bölgesi 1.Etap Sitesi 1.1.C1 Blok No:143/B İç Kapı No:Z101 
-Gebze/Kocael
+                    İstanbul, Türkiye
                   </div>
 
                   <div className="mt-5 overflow-hidden rounded-[14px] border border-blue-100">
@@ -588,7 +651,7 @@ Gebze/Kocael
                   {item.q}
 
                   <span className="text-blue-600 transition group-open:rotate-180">
-                   ⌄
+                    ⌄
                   </span>
                 </summary>
 
@@ -607,8 +670,6 @@ Gebze/Kocael
 
       <section className="px-6 pb-10 lg:px-10">
         <div className="relative mx-auto max-w-[1450px] overflow-hidden rounded-[20px] bg-gradient-to-r from-[#0a3c94] via-[#2388ee] to-[#a7d6ff] px-10 py-8 text-white">
-          {/* mountain illustration */}
-
           <div className="absolute bottom-0 right-0 opacity-40">
             <svg
               width="480"
@@ -664,7 +725,7 @@ Gebze/Kocael
       </section>
 
       {/* =====================================================
-          SHARED FOOTER
+          FOOTER
       ====================================================== */}
 
       <Footer active="contact" />
