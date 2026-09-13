@@ -114,6 +114,12 @@ export default function ITSMAnalyticsPage() {
             >
               ITSM Analytics
             </a>
+            <a
+  href="/microsoft-fabric-itsm"
+  className="hover:text-blue-600"
+>
+  Fabric + ITSM
+</a>
 
             <a href="/#integrations" className="hover:text-blue-600">
               Integrations
@@ -604,6 +610,12 @@ export default function ITSMAnalyticsPage() {
             >
               ITSM Analytics
             </a>
+            <a
+  href="/microsoft-fabric-itsm"
+  className="hover:text-blue-600"
+>
+  Fabric + ITSM
+</a>
 
             <a href="/#integrations">Integrations</a>
             <a href="/#reporting">Reporting</a>

@@ -95,7 +95,12 @@ export default function ServiceNowPowerBIPage() {
   >
     ITSM Analytics
   </a>
-
+<a
+  href="/microsoft-fabric-itsm"
+  className="hover:text-blue-600"
+>
+  Fabric + ITSM
+</a>
   <a href="/#integrations" className="hover:text-blue-600">
     Integrations
   </a>
@@ -801,6 +806,12 @@ export default function ServiceNowPowerBIPage() {
       </a>
       <a href="/itsm-analytics">
   ITSM Analytics
+</a>
+<a
+  href="/microsoft-fabric-itsm"
+  className="hover:text-blue-600"
+>
+  Microsoft Fabric + ITSM
 </a>
 
       <a href="/#integrations">Integrations</a>
