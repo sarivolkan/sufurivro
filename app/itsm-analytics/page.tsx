@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -17,18 +17,16 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "ITSM Analytics",
+  title: "ITSM Analytics, SLA & Service Performance",
   description:
-    "Turn ITSM data into actionable insights with SUFURIVRO. Analyze service performance, SLA, resolution times, user experience and operational efficiency with Microsoft Power BI.",
-
+    "Turn ITSM data into actionable insights with Power BI. Analyze SLA performance, MTTR, incidents, service requests, backlog and IT service performance with SUFURIVRO.",
   alternates: {
     canonical: "https://sufurivro.com/itsm-analytics",
   },
-
   openGraph: {
-    title: "ITSM Analytics | SUFURIVRO",
+    title: "ITSM Analytics, SLA & Service Performance | SUFURIVRO",
     description:
-      "Turn ITSM data into actionable insights with ready-to-use Power BI analytics and dashboards.",
+      "Transform ITSM data into Power BI dashboards for SLA analytics, MTTR, incidents, service performance and executive reporting.",
     url: "https://sufurivro.com/itsm-analytics",
     siteName: "SUFURIVRO",
     type: "website",
@@ -46,9 +44,7 @@ const KpiCard = ({
 }) => {
   return (
     <div className="rounded-2xl border border-blue-100 bg-white px-5 py-4 shadow-[0_5px_18px_rgba(15,55,105,0.06)]">
-      <div className="text-[12px] font-medium text-slate-500">
-        {label}
-      </div>
+      <div className="text-[12px] font-medium text-slate-500">{label}</div>
 
       <div className="mt-2 text-[28px] font-black leading-none text-[#0a2866]">
         {value}
@@ -65,12 +61,12 @@ const FeatureIcon = ({
   children,
   orange = false,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
   orange?: boolean;
 }) => {
   return (
     <div
-      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full ${
+      className={`flex h-12 w-12 items-center justify-center rounded-full ${
         orange
           ? "bg-orange-100 text-orange-600"
           : "bg-blue-100 text-blue-600"
@@ -88,9 +84,8 @@ export default function ITSMAnalyticsPage() {
 
   return (
     <main className="overflow-hidden bg-white text-slate-900">
-
       {/* =====================================================
-          COMMON HEADER
+          HEADER
       ====================================================== */}
 
       <Header active="itsm" />
@@ -114,7 +109,6 @@ export default function ITSMAnalyticsPage() {
         <div className="absolute -right-[150px] -top-[170px] h-[620px] w-[620px] rounded-full bg-blue-300/25 blur-3xl" />
 
         <div className="relative mx-auto grid max-w-[1450px] gap-14 px-6 py-16 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:px-10 lg:py-20">
-
           {/* LEFT */}
 
           <div className="max-w-[650px]">
@@ -133,15 +127,16 @@ export default function ITSMAnalyticsPage() {
             </h1>
 
             <p className="mt-6 max-w-[625px] text-[18px] leading-[1.58] text-[#526a91]">
-              SUFURIVRO turns your ITSM data into actionable insights with
-              ready-to-use analytics and dashboards in Microsoft Power BI.
-              Measure performance, identify trends, and drive continuous
-              improvement across your IT services.
+              SUFURIVRO transforms ITSM data into actionable insights with
+              ready-to-use analytics and Microsoft Power BI dashboards.
+              Monitor SLA performance, MTTR, incidents, service requests and
+              backlog while identifying trends and improving IT service
+              delivery.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-4">
               <a
-                href="/#contact"
+                href="/contact"
                 className="inline-flex h-[54px] min-w-[185px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-7 text-[15px] font-bold text-white shadow-[0_12px_24px_rgba(249,115,22,0.24)] transition hover:-translate-y-0.5"
               >
                 Book a Demo
@@ -149,7 +144,7 @@ export default function ITSMAnalyticsPage() {
               </a>
 
               <a
-                href="#use-cases"
+                href="/dashboards"
                 className="inline-flex h-[54px] min-w-[210px] items-center justify-center rounded-xl border border-blue-200 bg-white px-7 text-[15px] font-bold text-blue-700 shadow-[0_8px_18px_rgba(37,99,235,0.06)] transition hover:-translate-y-0.5"
               >
                 See Sample Dashboards
@@ -198,7 +193,6 @@ export default function ITSMAnalyticsPage() {
             </div>
 
             <div className="mt-3 grid gap-3 lg:grid-cols-[1.7fr_0.75fr]">
-
               {/* INCIDENT TREND */}
 
               <div className="rounded-2xl border border-blue-100 bg-white p-4">
@@ -244,8 +238,8 @@ export default function ITSMAnalyticsPage() {
                       "Oct",
                       "Nov",
                       "Dec",
-                    ].map((month) => (
-                      <span key={month}>{month}</span>
+                    ].map((m) => (
+                      <span key={m}>{m}</span>
                     ))}
                   </div>
                 </div>
@@ -312,8 +306,8 @@ export default function ITSMAnalyticsPage() {
             </h2>
 
             <p className="mt-2 text-[16px] text-[#667c99]">
-              Ready-to-use analyses to help you optimize IT service delivery
-              and demonstrate value.
+              Ready-to-use ITSM reporting and analytics to optimize service
+              delivery, monitor performance and demonstrate business value.
             </p>
           </div>
 
@@ -322,31 +316,29 @@ export default function ITSMAnalyticsPage() {
               {
                 icon: <BarChart3 size={25} />,
                 title: "Service Performance",
-                text: "Track SLA, resolution times and service levels across your IT services.",
+                text: "Track SLA compliance, MTTR, resolution times and service levels across your IT services.",
               },
               {
                 icon: <UsersRound size={25} />,
                 title: "User Experience",
-                text: "Analyze request patterns and user satisfaction to improve service delivery.",
+                text: "Analyze service request patterns, demand and user satisfaction to improve IT service delivery.",
               },
               {
                 icon: <Gauge size={25} />,
                 title: "Operational Efficiency",
-                text: "Identify bottlenecks, reduce backlog, and optimize resource allocation.",
+                text: "Identify bottlenecks, reduce ticket backlog, monitor workloads and optimize resource allocation.",
               },
               {
                 icon: <PieChart size={25} />,
                 title: "Executive Reporting",
-                text: "Provide clear, visual insights for IT and business stakeholders.",
+                text: "Deliver clear ITSM KPI dashboards and Power BI insights for IT leaders and business stakeholders.",
               },
             ].map((item) => (
               <div
                 key={item.title}
                 className="min-h-[200px] rounded-[18px] border border-blue-100 bg-white p-7 shadow-[0_6px_22px_rgba(17,41,101,0.04)]"
               >
-                <FeatureIcon>
-                  {item.icon}
-                </FeatureIcon>
+                <FeatureIcon>{item.icon}</FeatureIcon>
 
                 <h3 className="mt-5 text-[18px] font-black text-[#102965]">
                   {item.title}
@@ -369,30 +361,26 @@ export default function ITSMAnalyticsPage() {
         <div className="mx-auto max-w-[1450px] px-6 lg:px-10">
           <div className="text-center">
             <h2 className="text-[26px] font-black text-[#102965]">
-              Works with Your Existing ITSM Tools
+              ITSM Analytics for Your Existing Service Management Tools
             </h2>
 
             <p className="mt-1 text-[14px] text-[#667c99]">
-              Connect your ITSM data and start analyzing in minutes.
+              Connect your ITSM platforms, centralize service data and analyze
+              it with Microsoft Power BI.
             </p>
           </div>
 
           <div className="mt-7 grid items-center gap-8 md:grid-cols-4">
-
-            {/* SERVICENOW */}
-
             <a
               href="/servicenow-power-bi"
               className="flex items-center justify-center md:border-r md:border-slate-200"
             >
               <img
                 src="/logos/servicenow.png"
-                alt="ServiceNow"
+                alt="ServiceNow ITSM analytics"
                 className="max-h-[42px] max-w-[180px] object-contain"
               />
             </a>
-
-            {/* JIRA */}
 
             <div className="flex items-center justify-center md:border-r md:border-slate-200">
               <div className="flex items-center gap-3">
@@ -408,13 +396,11 @@ export default function ITSMAnalyticsPage() {
               </div>
             </div>
 
-            {/* FRESHSERVICE */}
-
             <div className="flex items-center justify-center md:border-r md:border-slate-200">
               <div className="flex items-center gap-3">
                 <img
                   src="/logos/freshservice.png"
-                  alt="Freshservice"
+                  alt="Freshservice ITSM"
                   className="h-[38px] w-[38px] object-contain"
                 />
 
@@ -424,13 +410,11 @@ export default function ITSMAnalyticsPage() {
               </div>
             </div>
 
-            {/* BMC */}
-
             <div className="flex items-center justify-center">
               <div className="flex items-center gap-3">
                 <img
                   src="/logos/bmc.svg"
-                  alt="BMC Helix"
+                  alt="BMC Helix ITSM"
                   className="h-[42px] w-[42px] object-contain"
                 />
 
@@ -455,7 +439,8 @@ export default function ITSMAnalyticsPage() {
             </h2>
 
             <p className="mt-2 text-[14px] text-[#667c99]">
-              A complete analytics solution built for ITSM teams.
+              A complete ITSM reporting and analytics solution built for
+              service management teams.
             </p>
           </div>
 
@@ -464,31 +449,26 @@ export default function ITSMAnalyticsPage() {
               {
                 icon: <Zap size={26} />,
                 title: "Fast Implementation",
-                text: "Get up and running quickly with pre-built content.",
+                text: "Get up and running quickly with pre-built ITSM analytics and reporting content.",
               },
               {
                 icon: <Target size={26} />,
                 title: "Tailored for ITSM",
-                text: "Built specifically for IT service management data and processes.",
+                text: "Built specifically for IT service management data, KPIs and operational processes.",
               },
               {
                 icon: <UserRound size={26} />,
                 title: "Self-Service Analytics",
-                text: "Empower your teams with easy-to-use Power BI reports.",
+                text: "Empower IT and business teams with governed, easy-to-use Power BI reports.",
               },
               {
                 icon: <ShieldCheck size={26} />,
                 title: "Scalable and Secure",
-                text: "Enterprise-grade security, ready for your growth.",
+                text: "Create a secure analytics foundation designed to scale with your IT organization.",
               },
             ].map((item) => (
-              <div
-                key={item.title}
-                className="flex items-start gap-4"
-              >
-                <FeatureIcon orange>
-                  {item.icon}
-                </FeatureIcon>
+              <div key={item.title} className="flex items-start gap-4">
+                <FeatureIcon orange>{item.icon}</FeatureIcon>
 
                 <div>
                   <h3 className="text-[16px] font-black text-[#102965]">
@@ -511,15 +491,12 @@ export default function ITSMAnalyticsPage() {
 
       <section className="px-6 pb-10 lg:px-10">
         <div className="relative mx-auto flex max-w-[1450px] flex-col justify-between gap-7 overflow-hidden rounded-[24px] border border-blue-100 bg-gradient-to-r from-[#eef7ff] via-[#f7fbff] to-[#e7f3ff] px-10 py-8 md:flex-row md:items-center">
-
-          {/* Decorative chart */}
-
           <div className="absolute bottom-0 left-8 flex items-end gap-4 opacity-30">
-            {[55, 95, 120, 70].map((height, index) => (
+            {[55, 95, 120, 70].map((h, i) => (
               <div
-                key={index}
+                key={i}
                 className="w-9 rounded-t-lg bg-blue-300"
-                style={{ height }}
+                style={{ height: h }}
               />
             ))}
           </div>
@@ -534,13 +511,13 @@ export default function ITSMAnalyticsPage() {
             </h2>
 
             <p className="mt-1 text-[13px] text-[#607690]">
-              See how SUFURIVRO can help you turn your ITSM data into real
-              business impact.
+              Turn ITSM data into trusted SLA, MTTR, service performance and
+              executive insights with Microsoft Power BI.
             </p>
           </div>
 
           <a
-            href="/#contact"
+            href="/contact"
             className="relative inline-flex shrink-0 items-center justify-center rounded-xl bg-orange-500 px-8 py-4 text-[15px] font-bold text-white shadow-lg shadow-orange-200 transition hover:-translate-y-0.5 hover:bg-orange-600"
           >
             Book a Demo →
@@ -552,7 +529,7 @@ export default function ITSMAnalyticsPage() {
           FOOTER
       ====================================================== */}
 
-     <Footer active="product" />
+      <Footer active="itsm" />
     </main>
   );
 }
