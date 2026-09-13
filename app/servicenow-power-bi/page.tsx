@@ -68,7 +68,7 @@ export default function ServiceNowPowerBIPage() {
           HEADER
       ====================================================== */}
 
-   
+   <Header active="servicenow" />
 
       {/* ======================================================
           HERO
