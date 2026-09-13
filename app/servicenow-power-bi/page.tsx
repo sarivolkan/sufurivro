@@ -77,38 +77,45 @@ export default function ServiceNowPowerBIPage() {
       />
     </a>
 
-    <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 lg:flex">
-      <a href="/#product" className="hover:text-blue-600">
-        Product
-      </a>
+   <nav className="hidden items-center gap-7 text-sm font-medium text-slate-600 lg:flex">
+  <a href="/#product" className="hover:text-blue-600">
+    Product
+  </a>
 
-      <a
-        href="/servicenow-power-bi"
-        className="font-semibold text-blue-700 hover:text-blue-600"
-      >
-        ServiceNow Power BI
-      </a>
+  <a
+    href="/servicenow-power-bi"
+    className="border-b-2 border-blue-600 pb-2 font-semibold text-blue-700"
+  >
+    ServiceNow Power BI
+  </a>
 
-      <a href="/#integrations" className="hover:text-blue-600">
-        Integrations
-      </a>
+  <a
+    href="/itsm-analytics"
+    className="hover:text-blue-600"
+  >
+    ITSM Analytics
+  </a>
 
-      <a href="/#reporting" className="hover:text-blue-600">
-        Self-Service Reporting
-      </a>
+  <a href="/#integrations" className="hover:text-blue-600">
+    Integrations
+  </a>
 
-      <a href="/#dashboards" className="hover:text-blue-600">
-        Dashboards
-      </a>
+  <a href="/#reporting" className="hover:text-blue-600">
+    Self-Service Reporting
+  </a>
 
-      <a href="/#features" className="hover:text-blue-600">
-        Features
-      </a>
+  <a href="/#dashboards" className="hover:text-blue-600">
+    Dashboards
+  </a>
 
-      <a href="/#contact" className="hover:text-blue-600">
-        Contact
-      </a>
-    </nav>
+  <a href="/#features" className="hover:text-blue-600">
+    Features
+  </a>
+
+  <a href="/#contact" className="hover:text-blue-600">
+    Contact
+  </a>
+</nav>
 
     <a
       href="/#contact"
@@ -792,6 +799,9 @@ export default function ServiceNowPowerBIPage() {
       >
         ServiceNow Power BI
       </a>
+      <a href="/itsm-analytics">
+  ITSM Analytics
+</a>
 
       <a href="/#integrations">Integrations</a>
       <a href="/#reporting">Reporting</a>
