@@ -96,7 +96,12 @@ export default function Home() {
             <a href="#product" className="hover:text-blue-600">
               Product
             </a>
-
+              <a
+    href="/servicenow-power-bi"
+    className="hover:text-blue-600"
+  >
+    ServiceNow Power BI
+  </a>
             <a href="#integrations" className="hover:text-blue-600">
               Integrations
             </a>
@@ -394,42 +399,62 @@ export default function Home() {
                 </p>
 
                 <div className="mt-6 space-y-3">
-                  {[
-                    {
-                      name: "ServiceNow",
-                      logo: "/logos/servicenow.png",
-                    },
-                    {
-                      name: "Jira Service Management",
-                      logo: "/logos/jira.svg",
-                    },
-                    {
-                      name: "Freshservice",
-                      logo: "/logos/freshservice.png",
-                    },
-                    {
-                      name: "BMC Helix",
-                      logo: "/logos/bmc.svg",
-                    },
-                  ].map((item) => (
-                    <div
-                      key={item.name}
-                      className="flex items-center gap-3 rounded-xl px-1 py-1.5"
-                    >
-                      <div className="flex h-8 w-8 items-center justify-center">
-                        <img
-                          src={item.logo}
-                          alt={item.name}
-                          className="h-6 w-6 object-contain"
-                        />
-                      </div>
+  {[
+    {
+      name: "ServiceNow",
+      logo: "/logos/servicenow.png",
+    },
+    {
+      name: "Jira Service Management",
+      logo: "/logos/jira.svg",
+    },
+    {
+      name: "Freshservice",
+      logo: "/logos/freshservice.png",
+    },
+    {
+      name: "BMC Helix",
+      logo: "/logos/bmc.svg",
+    },
+  ].map((item) =>
+    item.name === "ServiceNow" ? (
+      <a
+        key={item.name}
+        href="/servicenow-power-bi"
+        className="flex items-center gap-3 rounded-xl px-1 py-1.5 transition hover:bg-blue-50"
+      >
+        <div className="flex h-8 w-8 items-center justify-center">
+          <img
+            src={item.logo}
+            alt={item.name}
+            className="h-6 w-6 object-contain"
+          />
+        </div>
 
-                      <span className="text-[15px] text-slate-700">
-                        {item.name}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+        <span className="text-[15px] font-medium text-slate-700 transition hover:text-blue-600">
+          {item.name}
+        </span>
+      </a>
+    ) : (
+      <div
+        key={item.name}
+        className="flex items-center gap-3 rounded-xl px-1 py-1.5"
+      >
+        <div className="flex h-8 w-8 items-center justify-center">
+          <img
+            src={item.logo}
+            alt={item.name}
+            className="h-6 w-6 object-contain"
+          />
+        </div>
+
+        <span className="text-[15px] text-slate-700">
+          {item.name}
+        </span>
+      </div>
+    )
+  )}
+</div>
               </div>
 
               <div className="absolute -right-5 top-1/2 z-10 hidden -translate-y-1/2 text-4xl text-blue-500 lg:block">
