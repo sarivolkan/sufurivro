@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import SchemaMarkup from "@/components/SchemaMarkup";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -104,11 +104,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-white font-sans text-slate-900 antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+  <body>
+    <SchemaMarkup />
+    {children}
+  </body>
+</html>
   );
 }
