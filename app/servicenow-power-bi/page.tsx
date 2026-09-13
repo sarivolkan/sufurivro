@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Header from "@/components/Header";
 import {
   ArrowRight,
   BarChart3,
@@ -67,69 +68,7 @@ export default function ServiceNowPowerBIPage() {
           HEADER
       ====================================================== */}
 
-    <header className="sticky top-0 z-50 border-b border-blue-50 bg-white/95 backdrop-blur-xl">
-  <div className="mx-auto flex max-w-[1450px] items-center justify-between px-6 py-4 lg:px-10">
-    <a href="/" className="flex items-center">
-      <img
-        src="/logo/logo.png"
-        alt="SUFURIVRO"
-        className="h-[52px] w-auto object-contain"
-      />
-    </a>
-
-   <nav className="hidden items-center gap-7 text-sm font-medium text-slate-600 lg:flex">
-  <a href="/#product" className="hover:text-blue-600">
-    Product
-  </a>
-
-  <a
-    href="/servicenow-power-bi"
-    className="border-b-2 border-blue-600 pb-2 font-semibold text-blue-700"
-  >
-    ServiceNow Power BI
-  </a>
-
-  <a
-    href="/itsm-analytics"
-    className="hover:text-blue-600"
-  >
-    ITSM Analytics
-  </a>
-<a
-  href="/microsoft-fabric-itsm"
-  className="hover:text-blue-600"
->
-  Fabric + ITSM
-</a>
-  <a href="/#integrations" className="hover:text-blue-600">
-    Integrations
-  </a>
-
-  <a href="/#reporting" className="hover:text-blue-600">
-    Self-Service Reporting
-  </a>
-
-  <a href="/#dashboards" className="hover:text-blue-600">
-    Dashboards
-  </a>
-
-  <a href="/#features" className="hover:text-blue-600">
-    Features
-  </a>
-
-  <a href="/#contact" className="hover:text-blue-600">
-    Contact
-  </a>
-</nav>
-
-    <a
-      href="/#contact"
-      className="rounded-xl bg-orange-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-orange-200 transition hover:-translate-y-0.5 hover:bg-orange-600"
-    >
-      Book a Demo →
-    </a>
-  </div>
-</header>
+   
 
       {/* ======================================================
           HERO
@@ -811,7 +750,7 @@ export default function ServiceNowPowerBIPage() {
   href="/microsoft-fabric-itsm"
   className="hover:text-blue-600"
 >
-  Microsoft Fabric + ITSM
+  Fabric + ITSM
 </a>
 
       <a href="/#integrations">Integrations</a>

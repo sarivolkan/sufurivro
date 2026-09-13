@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
+import Header from "@/components/Header";
 
 import {
   ArrowRight,
   BarChart3,
-  Check,
   Clock3,
   Gauge,
   PieChart,
@@ -18,9 +19,11 @@ export const metadata: Metadata = {
   title: "ITSM Analytics",
   description:
     "Turn ITSM data into actionable insights with SUFURIVRO. Analyze service performance, SLA, resolution times, user experience and operational efficiency with Microsoft Power BI.",
+
   alternates: {
     canonical: "https://sufurivro.com/itsm-analytics",
   },
+
   openGraph: {
     title: "ITSM Analytics | SUFURIVRO",
     description:
@@ -42,7 +45,9 @@ const KpiCard = ({
 }) => {
   return (
     <div className="rounded-2xl border border-blue-100 bg-white px-5 py-4 shadow-[0_5px_18px_rgba(15,55,105,0.06)]">
-      <div className="text-[12px] font-medium text-slate-500">{label}</div>
+      <div className="text-[12px] font-medium text-slate-500">
+        {label}
+      </div>
 
       <div className="mt-2 text-[28px] font-black leading-none text-[#0a2866]">
         {value}
@@ -59,12 +64,12 @@ const FeatureIcon = ({
   children,
   orange = false,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   orange?: boolean;
 }) => {
   return (
     <div
-      className={`flex h-12 w-12 items-center justify-center rounded-full ${
+      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full ${
         orange
           ? "bg-orange-100 text-orange-600"
           : "bg-blue-100 text-blue-600"
@@ -82,74 +87,12 @@ export default function ITSMAnalyticsPage() {
 
   return (
     <main className="overflow-hidden bg-white text-slate-900">
+
       {/* =====================================================
-          HEADER
+          COMMON HEADER
       ====================================================== */}
 
-      <header className="sticky top-0 z-50 border-b border-blue-50 bg-white/95 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1450px] items-center justify-between px-6 py-4 lg:px-10">
-          <a href="/" className="flex items-center">
-            <img
-              src="/logo/logo.png"
-              alt="SUFURIVRO"
-              className="h-[52px] w-auto object-contain"
-            />
-          </a>
-
-          <nav className="hidden items-center gap-7 text-sm font-medium text-slate-600 lg:flex">
-            <a href="/#product" className="hover:text-blue-600">
-              Product
-            </a>
-
-            <a
-              href="/servicenow-power-bi"
-              className="hover:text-blue-600"
-            >
-              ServiceNow Power BI
-            </a>
-
-            <a
-              href="/itsm-analytics"
-              className="border-b-2 border-blue-600 pb-2 font-semibold text-blue-700"
-            >
-              ITSM Analytics
-            </a>
-            <a
-  href="/microsoft-fabric-itsm"
-  className="hover:text-blue-600"
->
-  Fabric + ITSM
-</a>
-
-            <a href="/#integrations" className="hover:text-blue-600">
-              Integrations
-            </a>
-
-            <a href="/#reporting" className="hover:text-blue-600">
-              Self-Service Reporting
-            </a>
-
-            <a href="/#dashboards" className="hover:text-blue-600">
-              Dashboards
-            </a>
-
-            <a href="/#features" className="hover:text-blue-600">
-              Features
-            </a>
-
-            <a href="/#contact" className="hover:text-blue-600">
-              Contact
-            </a>
-          </nav>
-
-          <a
-            href="/#contact"
-            className="rounded-xl bg-orange-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-orange-200 transition hover:-translate-y-0.5 hover:bg-orange-600"
-          >
-            Book a Demo →
-          </a>
-        </div>
-      </header>
+      <Header active="itsm" />
 
       {/* =====================================================
           HERO
@@ -170,6 +113,7 @@ export default function ITSMAnalyticsPage() {
         <div className="absolute -right-[150px] -top-[170px] h-[620px] w-[620px] rounded-full bg-blue-300/25 blur-3xl" />
 
         <div className="relative mx-auto grid max-w-[1450px] gap-14 px-6 py-16 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:px-10 lg:py-20">
+
           {/* LEFT */}
 
           <div className="max-w-[650px]">
@@ -253,6 +197,7 @@ export default function ITSMAnalyticsPage() {
             </div>
 
             <div className="mt-3 grid gap-3 lg:grid-cols-[1.7fr_0.75fr]">
+
               {/* INCIDENT TREND */}
 
               <div className="rounded-2xl border border-blue-100 bg-white p-4">
@@ -298,8 +243,8 @@ export default function ITSMAnalyticsPage() {
                       "Oct",
                       "Nov",
                       "Dec",
-                    ].map((m) => (
-                      <span key={m}>{m}</span>
+                    ].map((month) => (
+                      <span key={month}>{month}</span>
                     ))}
                   </div>
                 </div>
@@ -398,7 +343,9 @@ export default function ITSMAnalyticsPage() {
                 key={item.title}
                 className="min-h-[200px] rounded-[18px] border border-blue-100 bg-white p-7 shadow-[0_6px_22px_rgba(17,41,101,0.04)]"
               >
-                <FeatureIcon>{item.icon}</FeatureIcon>
+                <FeatureIcon>
+                  {item.icon}
+                </FeatureIcon>
 
                 <h3 className="mt-5 text-[18px] font-black text-[#102965]">
                   {item.title}
@@ -430,6 +377,9 @@ export default function ITSMAnalyticsPage() {
           </div>
 
           <div className="mt-7 grid items-center gap-8 md:grid-cols-4">
+
+            {/* SERVICENOW */}
+
             <a
               href="/servicenow-power-bi"
               className="flex items-center justify-center md:border-r md:border-slate-200"
@@ -440,6 +390,8 @@ export default function ITSMAnalyticsPage() {
                 className="max-h-[42px] max-w-[180px] object-contain"
               />
             </a>
+
+            {/* JIRA */}
 
             <div className="flex items-center justify-center md:border-r md:border-slate-200">
               <div className="flex items-center gap-3">
@@ -455,6 +407,8 @@ export default function ITSMAnalyticsPage() {
               </div>
             </div>
 
+            {/* FRESHSERVICE */}
+
             <div className="flex items-center justify-center md:border-r md:border-slate-200">
               <div className="flex items-center gap-3">
                 <img
@@ -468,6 +422,8 @@ export default function ITSMAnalyticsPage() {
                 </span>
               </div>
             </div>
+
+            {/* BMC */}
 
             <div className="flex items-center justify-center">
               <div className="flex items-center gap-3">
@@ -525,8 +481,13 @@ export default function ITSMAnalyticsPage() {
                 text: "Enterprise-grade security, ready for your growth.",
               },
             ].map((item) => (
-              <div key={item.title} className="flex items-start gap-4">
-                <FeatureIcon orange>{item.icon}</FeatureIcon>
+              <div
+                key={item.title}
+                className="flex items-start gap-4"
+              >
+                <FeatureIcon orange>
+                  {item.icon}
+                </FeatureIcon>
 
                 <div>
                   <h3 className="text-[16px] font-black text-[#102965]">
@@ -549,12 +510,15 @@ export default function ITSMAnalyticsPage() {
 
       <section className="px-6 pb-10 lg:px-10">
         <div className="relative mx-auto flex max-w-[1450px] flex-col justify-between gap-7 overflow-hidden rounded-[24px] border border-blue-100 bg-gradient-to-r from-[#eef7ff] via-[#f7fbff] to-[#e7f3ff] px-10 py-8 md:flex-row md:items-center">
+
+          {/* Decorative chart */}
+
           <div className="absolute bottom-0 left-8 flex items-end gap-4 opacity-30">
-            {[55, 95, 120, 70].map((h, i) => (
+            {[55, 95, 120, 70].map((height, index) => (
               <div
-                key={i}
+                key={index}
                 className="w-9 rounded-t-lg bg-blue-300"
-                style={{ height: h }}
+                style={{ height }}
               />
             ))}
           </div>
@@ -589,6 +553,7 @@ export default function ITSMAnalyticsPage() {
 
       <footer className="border-t border-blue-50 bg-white">
         <div className="mx-auto flex max-w-[1450px] flex-col gap-8 px-6 py-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
+
           <div className="flex items-center">
             <img
               src="/logo/logo.png"
@@ -598,7 +563,9 @@ export default function ITSMAnalyticsPage() {
           </div>
 
           <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-500">
-            <a href="/#product">Product</a>
+            <a href="/#product">
+              Product
+            </a>
 
             <a href="/servicenow-power-bi">
               ServiceNow Power BI
@@ -610,18 +577,30 @@ export default function ITSMAnalyticsPage() {
             >
               ITSM Analytics
             </a>
-            <a
-  href="/microsoft-fabric-itsm"
-  className="hover:text-blue-600"
->
-  Fabric + ITSM
-</a>
 
-            <a href="/#integrations">Integrations</a>
-            <a href="/#reporting">Reporting</a>
-            <a href="/#dashboards">Dashboards</a>
-            <a href="/#features">Features</a>
-            <a href="/#contact">Contact</a>
+            <a href="/microsoft-fabric-itsm">
+              Fabric + ITSM
+            </a>
+
+            <a href="/#integrations">
+              Integrations
+            </a>
+
+            <a href="/#reporting">
+              Reporting
+            </a>
+
+            <a href="/#dashboards">
+              Dashboards
+            </a>
+
+            <a href="/#features">
+              Features
+            </a>
+
+            <a href="/#contact">
+              Contact
+            </a>
           </div>
 
           <div className="text-xs text-slate-400">
