@@ -104,7 +104,9 @@ export default function Home() {
             <div className="text-[13px] font-extrabold uppercase tracking-[0.34em] text-blue-500">
               Connect · Unify · Report · Optimize
             </div>
-
+<div className="mt-4 inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-[13px] font-bold text-orange-600">
+  Stop paying for connector licenses
+</div>
           <h1 className="mt-6 font-black leading-[0.98] tracking-[-0.055em] text-[#132b73]">
   <span className="block whitespace-nowrap text-[52px] lg:text-[58px] xl:text-[52px]">
     Turn ITSM Data into
@@ -115,11 +117,12 @@ export default function Home() {
   </span>
 </h1>
 
-            <p className="mt-7 max-w-[620px] text-[19px] leading-[1.55] text-[#4a5f8f]">
-              SUFURIVRO connects your ITSM tools through secure APIs,
-              centralizes the data in Microsoft Fabric, and delivers
-              self-service reporting and ready-to-use dashboards in Power BI.
-            </p>
+            <p className="mt-7 max-w-[650px] text-[19px] leading-[1.55] text-[#4a5f8f]">
+  SUFURIVRO connects directly to your ITSM platforms through secure APIs —
+  without requiring expensive direct connectors or connector licenses.
+  Your data is ingested into Microsoft Fabric, modeled centrally, and made
+  available for self-service reporting and ready-to-use Power BI dashboards.
+</p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
@@ -138,22 +141,22 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="mt-9 flex flex-wrap gap-x-8 gap-y-4 text-[15px] font-medium text-[#5c6f98]">
-              <div className="flex items-center gap-2">
-                <span className="text-xl font-bold text-orange-500">✓</span>
-                <span>Complete ITSM integration</span>
-              </div>
+           <div className="mt-9 flex flex-wrap gap-x-8 gap-y-4 text-[15px] font-medium text-[#5c6f98]">
+  <div className="flex items-center gap-2">
+    <span className="text-xl font-bold text-orange-500">✓</span>
+    <span>No direct connector required</span>
+  </div>
 
-              <div className="flex items-center gap-2">
-                <span className="text-xl font-bold text-orange-500">✓</span>
-                <span>Self-service reporting</span>
-              </div>
+  <div className="flex items-center gap-2">
+    <span className="text-xl font-bold text-orange-500">✓</span>
+    <span>No connector licensing cost</span>
+  </div>
 
-              <div className="flex items-center gap-2">
-                <span className="text-xl font-bold text-orange-500">✓</span>
-                <span>Power BI ready</span>
-              </div>
-            </div>
+  <div className="flex items-center gap-2">
+    <span className="text-xl font-bold text-orange-500">✓</span>
+    <span>Secure API-only data ingestion</span>
+  </div>
+</div>
           </div>
 
           {/* HERO DASHBOARD */}
@@ -439,11 +442,11 @@ export default function Home() {
 
                 <div className="mt-6 space-y-4 text-[15px] text-slate-700">
                   {[
-                    "Secure API-based integration",
-                    "Incremental data loads",
-                    "Data validation & enrichment",
-                    "Unified data model",
-                  ].map((item) => (
+  "Secure API-only integration",
+  "No direct connector required",
+  "No connector licensing cost",
+  "Incremental data loads",
+].map((item) => (
                     <div key={item} className="flex items-center gap-3">
                       <Check />
                       <span>{item}</span>
