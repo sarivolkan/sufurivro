@@ -66,8 +66,8 @@ export default function Footer({ active }: FooterProps) {
             Fabric + ITSM
           </a>
 
-       <a
-  href="/#integrations"
+<a
+  href="/integrations"
   className={active === "integrations" ? selected : normal}
 >
   Integrations

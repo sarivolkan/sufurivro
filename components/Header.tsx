@@ -62,8 +62,8 @@ export default function Header({ active }: HeaderProps) {
             Fabric + ITSM
           </a>
 
-         <a
-  href="/#integrations"
+<a
+  href="/integrations"
   className={active === "integrations" ? selected : normal}
 >
   Integrations
