@@ -83,19 +83,13 @@ export default function Header({ active }: HeaderProps) {
   Dashboards
 </a>
 
-          <a
-            href="/#features"
-            className={active === "features" ? selected : normal}
-          >
-            Features
-          </a>
-
-          <a
-            href="/#contact"
-            className={active === "contact" ? selected : normal}
-          >
-            Contact
-          </a>
+        
+  <a
+  href="/contact"
+  className={active === "contact" ? selected : normal}
+>
+  Contact
+</a>
         </nav>
 
         {/* CTA */}

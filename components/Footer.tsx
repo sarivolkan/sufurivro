@@ -87,19 +87,13 @@ export default function Footer({ active }: FooterProps) {
   Dashboards
 </a>
 
-          <a
-            href="/#features"
-            className={active === "features" ? selected : normal}
-          >
-            Features
-          </a>
 
-          <a
-            href="/#contact"
-            className={active === "contact" ? selected : normal}
-          >
-            Contact
-          </a>
+      <a
+  href="/contact"
+  className={active === "contact" ? selected : normal}
+>
+  Contact
+</a>
         </div>
 
         {/* COPYRIGHT */}
