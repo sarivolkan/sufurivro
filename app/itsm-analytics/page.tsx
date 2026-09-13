@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 import {
   ArrowRight,
@@ -551,67 +552,7 @@ export default function ITSMAnalyticsPage() {
           FOOTER
       ====================================================== */}
 
-      <footer className="border-t border-blue-50 bg-white">
-        <div className="mx-auto flex max-w-[1450px] flex-col gap-8 px-6 py-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
-
-          <div className="flex items-center">
-            <img
-              src="/logo/logo.png"
-              alt="SUFURIVRO"
-              className="h-[44px] w-auto object-contain"
-            />
-          </div>
-
-          <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-500">
-            <a href="/#product">
-              Product
-            </a>
-
-            <a href="/servicenow-power-bi">
-              ServiceNow Power BI
-            </a>
-
-            <a
-              href="/itsm-analytics"
-              className="font-medium text-blue-700"
-            >
-              ITSM Analytics
-            </a>
-
-            <a href="/microsoft-fabric-itsm">
-              Fabric + ITSM
-            </a>
-
-            <a href="/#integrations">
-              Integrations
-            </a>
-
-            <a href="/#reporting">
-              Reporting
-            </a>
-
-            <a href="/#dashboards">
-              Dashboards
-            </a>
-
-            <a href="/#features">
-              Features
-            </a>
-
-            <a href="/#contact">
-              Contact
-            </a>
-          </div>
-
-          <div className="text-xs text-slate-400">
-            © 2026 SUFURIVRO by{" "}
-            <span className="font-semibold text-blue-700">
-              Datamart Information Technologies
-            </span>
-            . All rights reserved.
-          </div>
-        </div>
-      </footer>
+     <Footer active="product" />
     </main>
   );
 }
