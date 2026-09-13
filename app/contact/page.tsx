@@ -493,7 +493,7 @@ export default function ContactPage() {
                     href="mailto:hello@sufurivro.com"
                     className="mt-1 block text-[15px] font-black text-blue-600"
                   >
-                    hello@sufurivro.com
+                    info@datamart.com.tr
                   </a>
 
                   <div className="mt-1 text-[11px] text-[#607690]">
@@ -537,7 +537,9 @@ export default function ContactPage() {
                   </div>
 
                   <div className="mt-1 text-[12px] leading-5 text-[#607690]">
-                    İstanbul, Türkiye
+                    Deniz Street, Muallimköy Technology Development Zone
+Phase 1 Site, 1.1.C1 Block, No: 143/B, Unit Z101
+Gebze, Kocaeli, Türkiye
                   </div>
 
                   <div className="mt-5 overflow-hidden rounded-[14px] border border-blue-100">
