@@ -125,13 +125,13 @@ export default function Home() {
 </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
-              <a
-                href="#contact"
-                className="inline-flex h-[58px] min-w-[230px] items-center justify-center rounded-[14px] bg-gradient-to-r from-[#ff8a1f] to-[#ff6a00] px-8 text-[18px] font-bold text-white shadow-[0_10px_24px_rgba(255,122,26,0.28)] transition hover:-translate-y-0.5"
-              >
-                Request Demo
-                <span className="ml-3 text-[22px]">→</span>
-              </a>
+             <a
+  href="/book-a-demo"
+  className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
+>
+  Book a Demo
+  <ArrowRight size={16} />
+</a>
 
               <a
                 href="#integrations"
