@@ -125,13 +125,13 @@ export default function Home() {
 </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
-             <a
-  href="/book-a-demo"
-  className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
->
-  Book a Demo
-  <ArrowRight size={16} />
-</a>
+              <a
+                href="#contact"
+                className="inline-flex h-[58px] min-w-[230px] items-center justify-center rounded-[14px] bg-gradient-to-r from-[#ff8a1f] to-[#ff6a00] px-8 text-[18px] font-bold text-white shadow-[0_10px_24px_rgba(255,122,26,0.28)] transition hover:-translate-y-0.5"
+              >
+                Request Demo
+                <span className="ml-3 text-[22px]">→</span>
+              </a>
 
               <a
                 href="#integrations"
@@ -829,7 +829,7 @@ export default function Home() {
             </p>
 
             <a
-              href="#contact"
+              href="/dashboards"
               className="mt-7 inline-block rounded-xl border border-orange-400 bg-white px-6 py-3 font-bold text-orange-500 hover:bg-orange-50"
             >
               See Dashboards →
@@ -1040,9 +1040,12 @@ export default function Home() {
             </div>
 
             <div className="shrink-0">
-              <button className="rounded-xl bg-orange-500 px-8 py-4 font-black text-white shadow-lg shadow-orange-900/20 transition hover:-translate-y-0.5 hover:bg-orange-600">
-                Schedule a Demo →
-              </button>
+              <a
+  href="/book-a-demo"
+  className="rounded-xl bg-orange-500 px-8 py-4 font-black text-white shadow-lg shadow-orange-900/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
+>
+  Schedule a Demo →
+</a>
 
               <div className="mt-2 text-center text-[11px] text-blue-200">
                 No obligation. Just a conversation.
