@@ -7,7 +7,10 @@ import {
   ArrowRight,
   BarChart3,
   Clock3,
+  Database,
   Gauge,
+  Layers3,
+  Network,
   PieChart,
   ShieldCheck,
   Target,
@@ -17,20 +20,33 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "ITSM Analytics, SLA & Service Performance",
+  title: "ITSM Analytics, SLA, MTTR & Service Performance",
   description:
-    "Turn ITSM data into actionable insights with Power BI. Analyze SLA performance, MTTR, incidents, service requests, backlog and IT service performance with SUFURIVRO.",
+    "Build governed ITSM analytics across ServiceNow, Jira Service Management, Freshservice and BMC Helix. Standardize SLA, MTTR, backlog and service KPIs with Microsoft Fabric and Power BI.",
   alternates: {
     canonical: "https://sufurivro.com/itsm-analytics",
   },
   openGraph: {
-    title: "ITSM Analytics, SLA & Service Performance | SUFURIVRO",
+    title: "ITSM Analytics, SLA, MTTR & Service Performance | SUFURIVRO",
     description:
-      "Transform ITSM data into Power BI dashboards for SLA analytics, MTTR, incidents, service performance and executive reporting.",
+      "Create one governed ITSM analytics layer across multiple service-management platforms using Microsoft Fabric and Power BI.",
     url: "https://sufurivro.com/itsm-analytics",
     siteName: "SUFURIVRO",
     type: "website",
   },
+  keywords: [
+    "ITSM Analytics",
+    "ITSM Reporting",
+    "ITSM KPI Dashboard",
+    "SLA Analytics",
+    "MTTR Analytics",
+    "IT Service Analytics",
+    "Multi-Platform ITSM Analytics",
+    "Power BI ITSM",
+    "Microsoft Fabric ITSM",
+    "ITSM Semantic Model",
+    "Service Management Analytics",
+  ],
 };
 
 const KpiCard = ({
@@ -44,7 +60,9 @@ const KpiCard = ({
 }) => {
   return (
     <div className="rounded-2xl border border-blue-100 bg-white px-5 py-4 shadow-[0_5px_18px_rgba(15,55,105,0.06)]">
-      <div className="text-[12px] font-medium text-slate-500">{label}</div>
+      <div className="text-[12px] font-medium text-slate-500">
+        {label}
+      </div>
 
       <div className="mt-2 text-[28px] font-black leading-none text-[#0a2866]">
         {value}
@@ -84,10 +102,6 @@ export default function ITSMAnalyticsPage() {
 
   return (
     <main className="overflow-hidden bg-white text-slate-900">
-      {/* =====================================================
-          HEADER
-      ====================================================== */}
-
       <Header active="itsm" />
 
       {/* =====================================================
@@ -111,37 +125,40 @@ export default function ITSMAnalyticsPage() {
         <div className="relative mx-auto grid max-w-[1450px] gap-14 px-6 py-16 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:px-10 lg:py-20">
           {/* LEFT */}
 
-          <div className="max-w-[650px]">
+          <div className="max-w-[670px]">
             <div className="text-[12px] font-black uppercase tracking-[0.28em] text-blue-600">
-              From ITSM Data to Business Impact
+              Governed ITSM Analytics
+            </div>
+
+            <div className="mt-4 inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-[12px] font-bold text-orange-600">
+              One Analytics Layer Across Your ITSM Ecosystem
             </div>
 
             <h1 className="mt-5 font-black leading-[1.02] tracking-[-0.05em] text-[#112967]">
-              <span className="block whitespace-nowrap text-[51px] lg:text-[58px]">
+              <span className="block text-[51px] lg:text-[58px]">
                 ITSM Analytics
               </span>
 
-              <span className="mt-1 block whitespace-nowrap text-[43px] text-[#2563ff] lg:text-[41px]">
-                for a Smarter IT Organization
+              <span className="mt-1 block text-[42px] text-[#2563ff] lg:text-[47px]">
+                Built on Consistent Data & KPIs
               </span>
             </h1>
 
-            <p className="mt-6 max-w-[625px] text-[18px] leading-[1.58] text-[#526a91]">
-              SUFURIVRO transforms ITSM data into actionable insights with
-              ready-to-use analytics and Microsoft Power BI dashboards.
-              Monitor SLA performance, MTTR, incidents, service requests and
-              backlog while identifying trends and improving IT service
-              delivery.
+            <p className="mt-6 max-w-[640px] text-[18px] leading-[1.58] text-[#526a91]">
+              SUFURIVRO creates a governed analytics layer across your
+              service-management platforms. Standardize ITSM data, define SLA,
+              MTTR, backlog and service KPIs once, and deliver trusted Power BI
+              analytics through Microsoft Fabric.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-4">
-            <a
-  href="/book-a-demo"
-  className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
->
-  Book a Demo
-  <ArrowRight size={16} />
-</a>
+              <a
+                href="/book-a-demo"
+                className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
+              >
+                Book a Demo
+                <ArrowRight size={16} />
+              </a>
 
               <a
                 href="/dashboards"
@@ -153,18 +170,18 @@ export default function ITSMAnalyticsPage() {
 
             <div className="mt-7 flex flex-wrap gap-x-8 gap-y-3 text-[13px] font-medium text-[#395880]">
               <div className="flex items-center gap-2">
-                <Clock3 size={22} className="text-blue-600" />
-                Faster Insights
+                <Layers3 size={22} className="text-blue-600" />
+                Unified ITSM Model
+              </div>
+
+              <div className="flex items-center gap-2">
+                <Target size={22} className="text-blue-600" />
+                Governed KPI Logic
               </div>
 
               <div className="flex items-center gap-2">
                 <BarChart3 size={22} className="text-blue-600" />
-                Data-Driven Decisions
-              </div>
-
-              <div className="flex items-center gap-2">
-                <ShieldCheck size={22} className="text-blue-600" />
-                Greater IT Efficiency
+                Power BI Analytics
               </div>
             </div>
           </div>
@@ -180,15 +197,15 @@ export default function ITSMAnalyticsPage() {
               />
 
               <KpiCard
-                label="Request Fulfillment"
-                value="2,917"
-                change="↑ 25%"
+                label="SLA Compliance"
+                value="92.5%"
+                change="↑ 2.3%"
               />
 
               <KpiCard
-                label="Avg. Resolution Time"
-                value="6.2 h"
-                change="↓ 40%"
+                label="Avg. MTTR"
+                value="4.6 h"
+                change="↓ 18%"
               />
             </div>
 
@@ -291,10 +308,81 @@ export default function ITSMAnalyticsPage() {
       </section>
 
       {/* =====================================================
+          VALUE PROPOSITION
+      ====================================================== */}
+
+      <section className="py-20">
+        <div className="mx-auto max-w-[1450px] px-6 lg:px-10">
+          <div className="mx-auto max-w-[920px] text-center">
+            <div className="text-[11px] font-black uppercase tracking-[0.28em] text-blue-600">
+              One Source of ITSM Truth
+            </div>
+
+            <h2 className="mt-3 text-[36px] font-black tracking-[-0.035em] text-[#102965]">
+              One ITSM Analytics Model.
+              <span className="block text-blue-600">
+                Multiple Service Platforms.
+              </span>
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-[820px] text-[15px] leading-7 text-[#667c99]">
+              Different ITSM platforms often structure incidents, requests,
+              SLAs and service data differently. SUFURIVRO standardizes these
+              structures so your organization can analyze service performance
+              using consistent business definitions.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              {
+                icon: <Database size={25} />,
+                title: "Standardized Data",
+                text: "Normalize source-specific ITSM structures into consistent analytics entities.",
+              },
+              {
+                icon: <Target size={25} />,
+                title: "Common KPI Definitions",
+                text: "Use the same SLA, MTTR, backlog and service-performance logic across reports.",
+              },
+              {
+                icon: <Layers3 size={25} />,
+                title: "Reusable Semantic Model",
+                text: "Build reporting on top of a trusted and governed Power BI semantic layer.",
+              },
+              {
+                icon: <Network size={25} />,
+                title: "Cross-Platform Analytics",
+                text: "Compare service performance across multiple ITSM platforms using one analytical framework.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="min-h-[210px] rounded-[18px] border border-blue-100 bg-white p-7 shadow-[0_6px_22px_rgba(17,41,101,0.04)]"
+              >
+                <FeatureIcon>{item.icon}</FeatureIcon>
+
+                <h3 className="mt-5 text-[18px] font-black text-[#102965]">
+                  {item.title}
+                </h3>
+
+                <p className="mt-2 text-[14px] leading-6 text-[#526a91]">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
           USE CASES
       ====================================================== */}
 
-      <section id="use-cases" className="py-20">
+      <section
+        id="use-cases"
+        className="border-y border-blue-100 bg-[#f7fbff] py-20"
+      >
         <div className="mx-auto max-w-[1450px] px-6 lg:px-10">
           <div className="text-center">
             <div className="text-[11px] font-black uppercase tracking-[0.28em] text-blue-600">
@@ -305,9 +393,9 @@ export default function ITSMAnalyticsPage() {
               Key ITSM Analytics Use Cases
             </h2>
 
-            <p className="mt-2 text-[16px] text-[#667c99]">
-              Ready-to-use ITSM reporting and analytics to optimize service
-              delivery, monitor performance and demonstrate business value.
+            <p className="mx-auto mt-2 max-w-[760px] text-[16px] leading-7 text-[#667c99]">
+              Use governed ITSM data and consistent KPIs to monitor service
+              quality, operational performance and business outcomes.
             </p>
           </div>
 
@@ -320,23 +408,23 @@ export default function ITSMAnalyticsPage() {
               },
               {
                 icon: <UsersRound size={25} />,
-                title: "User Experience",
-                text: "Analyze service request patterns, demand and user satisfaction to improve IT service delivery.",
+                title: "Demand & User Experience",
+                text: "Analyze request demand, service patterns and satisfaction indicators to improve service delivery.",
               },
               {
                 icon: <Gauge size={25} />,
                 title: "Operational Efficiency",
-                text: "Identify bottlenecks, reduce ticket backlog, monitor workloads and optimize resource allocation.",
+                text: "Identify bottlenecks, ticket aging, backlog, workload distribution and operational improvement opportunities.",
               },
               {
                 icon: <PieChart size={25} />,
                 title: "Executive Reporting",
-                text: "Deliver clear ITSM KPI dashboards and Power BI insights for IT leaders and business stakeholders.",
+                text: "Deliver trusted ITSM KPI dashboards for IT leaders and business stakeholders using common definitions.",
               },
             ].map((item) => (
               <div
                 key={item.title}
-                className="min-h-[200px] rounded-[18px] border border-blue-100 bg-white p-7 shadow-[0_6px_22px_rgba(17,41,101,0.04)]"
+                className="min-h-[210px] rounded-[18px] border border-blue-100 bg-white p-7 shadow-[0_6px_22px_rgba(17,41,101,0.04)]"
               >
                 <FeatureIcon>{item.icon}</FeatureIcon>
 
@@ -344,7 +432,73 @@ export default function ITSMAnalyticsPage() {
                   {item.title}
                 </h3>
 
-                <p className="mt-2 max-w-[265px] text-[14px] leading-6 text-[#526a91]">
+                <p className="mt-2 max-w-[275px] text-[14px] leading-6 text-[#526a91]">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          KPI FRAMEWORK
+      ====================================================== */}
+
+      <section className="py-20">
+        <div className="mx-auto grid max-w-[1350px] gap-12 px-6 lg:grid-cols-[.85fr_1.15fr] lg:items-center lg:px-10">
+          <div>
+            <div className="text-[11px] font-black uppercase tracking-[0.28em] text-blue-600">
+              Governed KPI Framework
+            </div>
+
+            <h2 className="mt-3 text-[36px] font-black leading-tight tracking-[-0.035em] text-[#102965]">
+              Define ITSM Metrics Once
+              <span className="block text-blue-600">
+                and Reuse Them Everywhere
+              </span>
+            </h2>
+
+            <p className="mt-5 text-[15px] leading-7 text-[#607690]">
+              When each dashboard recreates its own SLA, MTTR or backlog
+              calculation, reporting quickly becomes inconsistent. SUFURIVRO
+              centralizes core business logic in a governed analytics layer so
+              teams can work from the same definitions.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                title: "SLA Compliance",
+                text: "Standardize compliance, breach and service-level calculations across reporting.",
+              },
+              {
+                title: "MTTR",
+                text: "Apply consistent mean-time-to-resolution logic across teams, services and sources.",
+              },
+              {
+                title: "Backlog & Aging",
+                text: "Measure open workload and ticket aging using common business rules.",
+              },
+              {
+                title: "Service Performance",
+                text: "Create reusable operational and executive service-management measures.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[18px] border border-blue-100 bg-[#fbfdff] p-6"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-100 text-orange-600">
+                  <Target size={20} />
+                </div>
+
+                <h3 className="mt-4 text-[16px] font-black text-[#102965]">
+                  {item.title}
+                </h3>
+
+                <p className="mt-2 text-[12px] leading-5 text-[#607690]">
                   {item.text}
                 </p>
               </div>
@@ -357,20 +511,25 @@ export default function ITSMAnalyticsPage() {
           ITSM TOOLS
       ====================================================== */}
 
-      <section className="border-y border-blue-100 bg-gradient-to-r from-[#f5faff] via-white to-[#f5faff] py-9">
+      <section className="border-y border-blue-100 bg-gradient-to-r from-[#f5faff] via-white to-[#f5faff] py-12">
         <div className="mx-auto max-w-[1450px] px-6 lg:px-10">
           <div className="text-center">
-            <h2 className="text-[26px] font-black text-[#102965]">
-              ITSM Analytics for Your Existing Service Management Tools
+            <div className="text-[10px] font-black uppercase tracking-[0.28em] text-blue-600">
+              Multi-Platform ITSM Analytics
+            </div>
+
+            <h2 className="mt-2 text-[27px] font-black text-[#102965]">
+              One Analytics Layer Across Your Service Management Tools
             </h2>
 
-            <p className="mt-1 text-[14px] text-[#667c99]">
-              Connect your ITSM platforms, centralize service data and analyze
-              it with Microsoft Power BI.
+            <p className="mx-auto mt-2 max-w-[740px] text-[14px] leading-6 text-[#667c99]">
+              Bring service data from different ITSM environments into a common
+              analytical structure while keeping your reporting and KPI logic
+              consistent.
             </p>
           </div>
 
-          <div className="mt-7 grid items-center gap-8 md:grid-cols-4">
+          <div className="mt-8 grid items-center gap-8 md:grid-cols-4">
             <a
               href="/servicenow-power-bi"
               className="flex items-center justify-center md:border-r md:border-slate-200"
@@ -386,7 +545,7 @@ export default function ITSMAnalyticsPage() {
               <div className="flex items-center gap-3">
                 <img
                   src="/logos/jira.svg"
-                  alt="Jira Service Management"
+                  alt="Jira Service Management analytics"
                   className="h-[37px] w-[37px] object-contain"
                 />
 
@@ -400,7 +559,7 @@ export default function ITSMAnalyticsPage() {
               <div className="flex items-center gap-3">
                 <img
                   src="/logos/freshservice.png"
-                  alt="Freshservice ITSM"
+                  alt="Freshservice analytics"
                   className="h-[38px] w-[38px] object-contain"
                 />
 
@@ -414,7 +573,7 @@ export default function ITSMAnalyticsPage() {
               <div className="flex items-center gap-3">
                 <img
                   src="/logos/bmc.svg"
-                  alt="BMC Helix ITSM"
+                  alt="BMC Helix analytics"
                   className="h-[42px] w-[42px] object-contain"
                 />
 
@@ -428,19 +587,88 @@ export default function ITSMAnalyticsPage() {
       </section>
 
       {/* =====================================================
+          PLATFORM FLOW
+      ====================================================== */}
+
+      <section className="py-20">
+        <div className="mx-auto max-w-[1350px] px-6 lg:px-10">
+          <div className="text-center">
+            <div className="text-[11px] font-black uppercase tracking-[0.28em] text-blue-600">
+              From Source Systems to Trusted Insight
+            </div>
+
+            <h2 className="mt-3 text-[35px] font-black text-[#102965]">
+              A Reusable ITSM Analytics Architecture
+            </h2>
+          </div>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-4">
+            {[
+              {
+                no: "01",
+                icon: <Network size={22} />,
+                title: "Connect",
+                text: "Bring ITSM data from your service-management platforms into Microsoft Fabric.",
+              },
+              {
+                no: "02",
+                icon: <Database size={22} />,
+                title: "Standardize",
+                text: "Normalize source-specific records into common ITSM entities and relationships.",
+              },
+              {
+                no: "03",
+                icon: <Layers3 size={22} />,
+                title: "Govern",
+                text: "Apply reusable KPI logic, measures and semantic-model definitions.",
+              },
+              {
+                no: "04",
+                icon: <BarChart3 size={22} />,
+                title: "Analyze",
+                text: "Deliver dashboards, drill-through analysis and self-service reporting in Power BI.",
+              },
+            ].map((item) => (
+              <div
+                key={item.no}
+                className="rounded-[20px] border border-blue-100 bg-white p-6 shadow-sm"
+              >
+                <div className="flex items-center justify-between">
+                  <FeatureIcon>{item.icon}</FeatureIcon>
+
+                  <div className="text-[11px] font-black text-orange-500">
+                    {item.no}
+                  </div>
+                </div>
+
+                <h3 className="mt-5 text-[17px] font-black text-[#102965]">
+                  {item.title}
+                </h3>
+
+                <p className="mt-2 text-[13px] leading-6 text-[#607690]">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
           WHY CHOOSE
       ====================================================== */}
 
-      <section className="py-16">
+      <section className="border-y border-blue-100 bg-[#f8fbff] py-16">
         <div className="mx-auto max-w-[1450px] px-6 lg:px-10">
           <div className="text-center">
             <h2 className="text-[32px] font-black text-[#102965]">
               Why Choose SUFURIVRO for ITSM Analytics?
             </h2>
 
-            <p className="mt-2 text-[14px] text-[#667c99]">
-              A complete ITSM reporting and analytics solution built for
-              service management teams.
+            <p className="mx-auto mt-2 max-w-[700px] text-[14px] leading-6 text-[#667c99]">
+              Build service-management analytics on a reusable data,
+              governance and semantic-model foundation instead of rebuilding
+              reporting logic for every dashboard.
             </p>
           </div>
 
@@ -448,23 +676,23 @@ export default function ITSMAnalyticsPage() {
             {[
               {
                 icon: <Zap size={26} />,
-                title: "Fast Implementation",
-                text: "Get up and running quickly with pre-built ITSM analytics and reporting content.",
+                title: "Analytics Accelerators",
+                text: "Start with reusable ITSM data models, KPI definitions and dashboard patterns.",
               },
               {
                 icon: <Target size={26} />,
-                title: "Tailored for ITSM",
-                text: "Built specifically for IT service management data, KPIs and operational processes.",
+                title: "Designed for ITSM",
+                text: "Built around incidents, requests, changes, problems, SLAs and service-management processes.",
               },
               {
                 icon: <UserRound size={26} />,
-                title: "Self-Service Analytics",
-                text: "Empower IT and business teams with governed, easy-to-use Power BI reports.",
+                title: "Self-Service Ready",
+                text: "Give IT and business teams governed Power BI models they can confidently explore.",
               },
               {
                 icon: <ShieldCheck size={26} />,
-                title: "Scalable and Secure",
-                text: "Create a secure analytics foundation designed to scale with your IT organization.",
+                title: "Governed & Scalable",
+                text: "Use Microsoft Fabric and Power BI as the enterprise foundation for consistent ITSM intelligence.",
               },
             ].map((item) => (
               <div key={item.title} className="flex items-start gap-4">
@@ -489,7 +717,7 @@ export default function ITSMAnalyticsPage() {
           CTA
       ====================================================== */}
 
-      <section className="px-6 pb-10 lg:px-10">
+      <section className="px-6 py-10 lg:px-10">
         <div className="relative mx-auto flex max-w-[1450px] flex-col justify-between gap-7 overflow-hidden rounded-[24px] border border-blue-100 bg-gradient-to-r from-[#eef7ff] via-[#f7fbff] to-[#e7f3ff] px-10 py-8 md:flex-row md:items-center">
           <div className="absolute bottom-0 left-8 flex items-end gap-4 opacity-30">
             {[55, 95, 120, 70].map((h, i) => (
@@ -503,32 +731,29 @@ export default function ITSMAnalyticsPage() {
 
           <div className="relative md:ml-[300px]">
             <div className="text-[10px] font-black uppercase tracking-[0.28em] text-blue-600">
-              Ready to Unlock the Value of Your ITSM Data?
+              Build a Trusted ITSM Analytics Foundation
             </div>
 
             <h2 className="mt-2 text-[27px] font-black text-[#102965]">
-              Start Your ITSM Analytics Journey Today
+              Standardize Your ITSM Data. Govern Your KPIs. Scale Your Analytics.
             </h2>
 
-            <p className="mt-1 text-[13px] text-[#607690]">
-              Turn ITSM data into trusted SLA, MTTR, service performance and
-              executive insights with Microsoft Power BI.
+            <p className="mt-1 max-w-[760px] text-[13px] leading-6 text-[#607690]">
+              See how SUFURIVRO combines Microsoft Fabric, governed ITSM models
+              and Power BI to create one reusable analytics layer across your
+              service-management ecosystem.
             </p>
           </div>
 
-       <a
-  href="/book-a-demo"
-  className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
->
-  Book a Demo
-  <ArrowRight size={16} />
-</a>
+          <a
+            href="/book-a-demo"
+            className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
+          >
+            Book a Demo
+            <ArrowRight size={16} />
+          </a>
         </div>
       </section>
-
-      {/* =====================================================
-          FOOTER
-      ====================================================== */}
 
       <Footer active="itsm" />
     </main>

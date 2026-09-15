@@ -19,20 +19,33 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "ServiceNow Power BI Integration & Analytics",
+  title: "ServiceNow Power BI Analytics with Microsoft Fabric",
   description:
-    "Connect ServiceNow to Microsoft Fabric and Power BI through secure APIs. Build SLA, incident and MTTR dashboards without requiring a dedicated direct connector.",
+    "Transform ServiceNow data into governed Power BI analytics with Microsoft Fabric. Standardize ITSM data, SLA and MTTR KPIs, semantic models, dashboards and self-service reporting with SUFURIVRO.",
   alternates: {
     canonical: "https://sufurivro.com/servicenow-power-bi",
   },
   openGraph: {
-    title: "ServiceNow Power BI Integration & Analytics | SUFURIVRO",
+    title: "ServiceNow Power BI Analytics with Microsoft Fabric | SUFURIVRO",
     description:
-      "Connect ServiceNow data to Microsoft Fabric and Power BI through secure APIs for automated ITSM analytics and reporting.",
+      "Build a governed ServiceNow analytics layer with Microsoft Fabric and Power BI for SLA, MTTR, incident, backlog and service-performance reporting.",
     url: "https://sufurivro.com/servicenow-power-bi",
     siteName: "SUFURIVRO",
     type: "website",
   },
+  keywords: [
+    "ServiceNow Power BI",
+    "ServiceNow Analytics",
+    "ServiceNow Power BI Integration",
+    "ServiceNow Microsoft Fabric",
+    "ServiceNow Reporting",
+    "ServiceNow ITSM Analytics",
+    "ServiceNow SLA Dashboard",
+    "ServiceNow MTTR Dashboard",
+    "ServiceNow Semantic Model",
+    "Power BI ServiceNow Dashboard",
+    "Microsoft Fabric ITSM Analytics",
+  ],
 };
 
 const BenefitCard = ({
@@ -119,33 +132,31 @@ export default function ServiceNowPowerBIPage() {
         <div className="relative mx-auto grid max-w-[1450px] gap-14 px-6 py-16 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:px-10 lg:py-20">
           {/* LEFT */}
 
-          <div className="max-w-[650px]">
+          <div className="max-w-[660px]">
             <div className="text-[11px] font-black uppercase tracking-[0.3em] text-blue-600">
-              ServiceNow Power BI Integration
+              ServiceNow Power BI Analytics
             </div>
 
             <div className="mt-4 inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-[12px] font-bold text-orange-600">
-              Stop paying for connector licenses
+              Built on Microsoft Fabric + Power BI
             </div>
 
             <h1 className="mt-5 text-[48px] font-black leading-[1.04] tracking-[-0.045em] text-[#102965] lg:text-[59px]">
-              ServiceNow Power BI Analytics
+              Turn ServiceNow Data into
               <span className="block text-blue-600">
-                Without a Direct Connector
+                Governed Power BI Intelligence
               </span>
             </h1>
 
-            <p className="mt-6 max-w-[640px] text-[17px] leading-[1.65] text-[#526a91]">
-              Connect ServiceNow to Microsoft Fabric and Power BI through
-              secure APIs without relying on an expensive direct connector.
-              Centralize ServiceNow data, automate reporting, and build SLA,
-              incident, MTTR, backlog, and service performance dashboards in
-              Power BI.
+            <p className="mt-6 max-w-[650px] text-[17px] leading-[1.65] text-[#526a91]">
+              Bring ServiceNow data into Microsoft Fabric and transform raw ITSM
+              records into standardized entities, governed KPI definitions,
+              reusable semantic models and interactive Power BI analytics.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="/contact"
+                href="/book-a-demo"
                 className="inline-flex h-[54px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-7 text-[14px] font-bold text-white shadow-[0_12px_28px_rgba(249,115,22,.25)] hover:bg-orange-600"
               >
                 Book a Demo
@@ -162,17 +173,29 @@ export default function ServiceNowPowerBIPage() {
 
             <div className="mt-8 flex flex-wrap gap-x-7 gap-y-4 text-[12px] font-semibold text-[#526a91]">
               <div className="flex items-center gap-2">
-                <Check size={16} className="text-orange-500" strokeWidth={3} />
-                No direct connector required
+                <Check
+                  size={16}
+                  className="text-orange-500"
+                  strokeWidth={3}
+                />
+                Standardized ServiceNow data model
               </div>
 
               <div className="flex items-center gap-2">
-                <Check size={16} className="text-orange-500" strokeWidth={3} />
-                Secure API-only integration
+                <Check
+                  size={16}
+                  className="text-orange-500"
+                  strokeWidth={3}
+                />
+                Governed SLA & MTTR metrics
               </div>
 
               <div className="flex items-center gap-2">
-                <Check size={16} className="text-orange-500" strokeWidth={3} />
+                <Check
+                  size={16}
+                  className="text-orange-500"
+                  strokeWidth={3}
+                />
                 Microsoft Fabric + Power BI
               </div>
             </div>
@@ -242,15 +265,16 @@ export default function ServiceNowPowerBIPage() {
                   </div>
 
                   <div className="mt-5 flex h-[155px] items-end gap-2">
-                    {[55, 92, 76, 115, 87, 128, 104, 139, 96, 120, 83, 110].map(
-                      (height, index) => (
-                        <div
-                          key={index}
-                          className="flex-1 rounded-t bg-blue-400"
-                          style={{ height }}
-                        />
-                      )
-                    )}
+                    {[
+                      55, 92, 76, 115, 87, 128,
+                      104, 139, 96, 120, 83, 110,
+                    ].map((height, index) => (
+                      <div
+                        key={index}
+                        className="flex-1 rounded-t bg-blue-400"
+                        style={{ height }}
+                      />
+                    ))}
                   </div>
 
                   <div className="mt-2 flex justify-between text-[7px] text-slate-400">
@@ -268,7 +292,9 @@ export default function ServiceNowPowerBIPage() {
                       "Nov",
                       "Dec",
                     ].map((month) => (
-                      <span key={month}>{month}</span>
+                      <span key={month}>
+                        {month}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -297,7 +323,9 @@ export default function ServiceNowPowerBIPage() {
                         className="flex justify-between border-b border-slate-50 pb-1"
                       >
                         <span>{name}</span>
-                        <span className="font-bold">{value}</span>
+                        <span className="font-bold">
+                          {value}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -320,13 +348,13 @@ export default function ServiceNowPowerBIPage() {
             </div>
 
             <h2 className="mt-3 text-[34px] font-black text-[#102965]">
-              Why Use Power BI with ServiceNow?
+              Go Beyond Native ServiceNow Reporting
             </h2>
 
-            <p className="mx-auto mt-3 max-w-[720px] text-[14px] leading-6 text-[#607690]">
-              Turn ServiceNow data into clear, governed and interactive
-              analytics for IT operations, service managers and business
-              stakeholders.
+            <p className="mx-auto mt-3 max-w-[760px] text-[14px] leading-6 text-[#607690]">
+              Use Microsoft Fabric and Power BI to create a reusable ServiceNow
+              analytics foundation with consistent business definitions,
+              governed metrics and enterprise-grade reporting.
             </p>
           </div>
 
@@ -334,69 +362,70 @@ export default function ServiceNowPowerBIPage() {
             <BenefitCard
               icon={<BarChart3 size={23} />}
               title="Complete ITSM Visibility"
-              text="Analyze incidents, requests, changes, problems, SLAs and service performance from one reporting layer."
+              text="Analyze incidents, requests, changes, problems, SLAs and service performance through one governed reporting layer."
             />
 
             <BenefitCard
               icon={<Clock3 size={23} />}
-              title="Faster Decision Making"
-              text="Replace manual ServiceNow reporting with interactive Power BI dashboards and governed metrics."
+              title="Consistent KPI Logic"
+              text="Define SLA, MTTR, resolution time, backlog and service-performance measures once and reuse them everywhere."
             />
 
             <BenefitCard
               icon={<Gauge size={23} />}
-              title="SLA & MTTR Analytics"
-              text="Track SLA compliance, breaches, resolution times, MTTR and backlog trends across your services."
+              title="Operational Analytics"
+              text="Track service trends, bottlenecks, aging tickets and performance by service, priority, assignment group and team."
             />
 
             <BenefitCard
               icon={<ShieldCheck size={23} />}
-              title="Secure & Scalable"
-              text="Use secure API-based ingestion and Microsoft Fabric to create a scalable enterprise analytics foundation."
+              title="Governed & Scalable"
+              text="Use Microsoft Fabric as a scalable analytics foundation and Power BI for secure enterprise reporting."
             />
           </div>
         </div>
       </section>
 
       {/* =====================================================
-          CONNECTOR-FREE SEO SECTION
+          ANALYTICS LAYER
       ====================================================== */}
 
       <section className="border-y border-blue-100 bg-[#f7fbff] py-16">
         <div className="mx-auto grid max-w-[1450px] gap-12 px-6 lg:grid-cols-[.95fr_1.05fr] lg:items-center lg:px-10">
           <div>
             <div className="text-[10px] font-black uppercase tracking-[0.3em] text-orange-500">
-              API-First Architecture
+              Governed ServiceNow Analytics
             </div>
 
             <h2 className="mt-3 text-[35px] font-black leading-tight text-[#102965]">
-              ServiceNow Power BI
+              From Raw ServiceNow Data
               <span className="block text-blue-600">
-                Without a Direct Connector
+                to Trusted Business Metrics
               </span>
             </h2>
 
             <p className="mt-5 text-[15px] leading-7 text-[#607690]">
-              SUFURIVRO retrieves ServiceNow data through secure vendor APIs
-              instead of depending on a dedicated ServiceNow-to-Power-BI
-              connector. The data is centralized and modeled in Microsoft
-              Fabric before being delivered to Power BI for reporting,
-              dashboards and self-service analytics.
+              Connecting to ServiceNow is only the beginning. SUFURIVRO adds
+              the analytics structure required to transform operational ITSM
+              records into consistent, reusable and business-ready
+              intelligence.
             </p>
 
             <p className="mt-4 text-[15px] leading-7 text-[#607690]">
-              This API-first approach gives organizations greater control over
-              their data architecture and removes the need for a separate
-              connector-specific licensing layer.
+              ServiceNow data can be brought into Microsoft Fabric using the
+              integration approach appropriate for your architecture. Once
+              available in Fabric, SUFURIVRO standardizes the data model,
+              implements ITSM KPI logic and prepares governed semantic models
+              for Microsoft Power BI.
             </p>
 
             <div className="mt-7 space-y-3">
               {[
-                "No dedicated direct connector required",
-                "No separate connector licensing cost",
-                "Secure API-based ServiceNow data ingestion",
+                "Standardized ServiceNow entities and relationships",
+                "Reusable SLA and MTTR KPI definitions",
                 "Centralized ServiceNow data in Microsoft Fabric",
                 "Governed semantic models for Power BI",
+                "Reusable analytics across multiple dashboards",
               ].map((item) => (
                 <div
                   key={item}
@@ -414,33 +443,33 @@ export default function ServiceNowPowerBIPage() {
 
           <div className="rounded-[20px] border border-blue-100 bg-white p-7 shadow-[0_12px_35px_rgba(20,60,120,.06)]">
             <div className="text-[11px] font-black uppercase tracking-[0.2em] text-blue-600">
-              ServiceNow Data Flow
+              ServiceNow Analytics Flow
             </div>
 
             <div className="mt-7 space-y-3">
               {[
                 {
                   step: "01",
-                  title: "ServiceNow API",
-                  text: "Securely extract the ITSM data required for analytics.",
+                  title: "ServiceNow",
+                  text: "Bring the ITSM data required for analytics into your Microsoft data platform.",
                   icon: <Database size={21} />,
                 },
                 {
                   step: "02",
                   title: "Microsoft Fabric",
-                  text: "Centralize, transform and store ServiceNow data.",
+                  text: "Centralize, transform, store and govern ServiceNow data.",
                   icon: <Layers3 size={21} />,
                 },
                 {
                   step: "03",
-                  title: "Semantic Model",
-                  text: "Create consistent, governed ITSM metrics and relationships.",
+                  title: "SUFURIVRO Analytics Model",
+                  text: "Standardize entities, relationships, measures and ITSM KPI definitions.",
                   icon: <Target size={21} />,
                 },
                 {
                   step: "04",
                   title: "Microsoft Power BI",
-                  text: "Deliver dashboards, analysis and self-service reporting.",
+                  text: "Deliver trusted dashboards, analysis and self-service reporting.",
                   icon: <BarChart3 size={21} />,
                 },
               ].map((item) => (
@@ -473,47 +502,45 @@ export default function ServiceNowPowerBIPage() {
       </section>
 
       {/* =====================================================
-          ALTERNATIVE TO CONNECTORS
+          WHAT SUFURIVRO ADDS
       ====================================================== */}
 
       <section className="py-16">
         <div className="mx-auto max-w-[1450px] px-6 lg:px-10">
-          <div className="mx-auto max-w-[850px] text-center">
+          <div className="mx-auto max-w-[880px] text-center">
             <div className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-600">
-              Reduce Connector Dependency
+              The SUFURIVRO Analytics Layer
             </div>
 
             <h2 className="mt-3 text-[34px] font-black text-[#102965]">
-              A Cost-Effective Alternative to ServiceNow Power BI Connectors
+              Microsoft Fabric Moves and Stores Data. SUFURIVRO Makes It
+              ITSM-Ready.
             </h2>
 
             <p className="mt-4 text-[14px] leading-7 text-[#607690]">
-              Traditional ServiceNow Power BI integrations can introduce an
-              additional connector layer between your ITSM platform and your
-              analytics environment. SUFURIVRO uses ServiceNow APIs and
-              Microsoft Fabric to create a reusable data foundation that can
-              support Power BI dashboards, self-service reporting and broader
-              enterprise analytics.
+              SUFURIVRO complements your Microsoft data platform by providing
+              the ITSM-specific modeling and analytics logic required after
+              ServiceNow data reaches Fabric.
             </p>
           </div>
 
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             <BenefitCard
               icon={<Database size={23} />}
-              title="Own Your Data Layer"
-              text="Centralize ServiceNow data in Microsoft Fabric instead of keeping reporting logic inside a connector."
+              title="Canonical ITSM Model"
+              text="Transform ServiceNow structures into a reusable analytics model designed around incidents, requests, problems, changes and SLAs."
             />
 
             <BenefitCard
               icon={<LineChart size={23} />}
-              title="Reuse Data Across Reports"
-              text="Build governed ITSM models once and reuse them across multiple Power BI dashboards and reporting scenarios."
+              title="Reusable KPI Framework"
+              text="Create governed measures once and reuse them across operational, management and executive Power BI reports."
             />
 
             <BenefitCard
               icon={<Zap size={23} />}
-              title="Automate Reporting"
-              text="Replace recurring exports and manually maintained reports with automated ServiceNow analytics pipelines."
+              title="Analytics Accelerators"
+              text="Reduce repeated BI development by starting with reusable ITSM models, KPI patterns and dashboard structures."
             />
           </div>
         </div>
@@ -531,12 +558,12 @@ export default function ServiceNowPowerBIPage() {
             </div>
 
             <h2 className="mt-3 text-[34px] font-black text-[#102965]">
-              ServiceNow Dashboards Built for ITSM Performance
+              ServiceNow Power BI Dashboards Built for ITSM Performance
             </h2>
 
             <p className="mx-auto mt-3 max-w-[720px] text-[14px] leading-6 text-[#607690]">
-              Use Power BI to monitor operational performance, service quality
-              and ITSM outcomes using trusted ServiceNow data.
+              Monitor operational performance, service quality and ITSM
+              outcomes using trusted ServiceNow data and consistent KPI logic.
             </p>
           </div>
 
@@ -544,25 +571,25 @@ export default function ServiceNowPowerBIPage() {
             <BenefitCard
               icon={<BarChart3 size={23} />}
               title="Incident Analytics"
-              text="Analyze incident volumes, priorities, categories, assignment groups, resolution times and recurring trends."
+              text="Analyze incident volumes, priorities, categories, assignment groups, aging, resolution times and recurring trends."
             />
 
             <BenefitCard
               icon={<ShieldCheck size={23} />}
               title="SLA Performance"
-              text="Monitor SLA compliance, breached tickets, service-level trends and performance by service or team."
+              text="Monitor SLA compliance, breached tickets, service-level trends and performance by service, priority or team."
             />
 
             <BenefitCard
               icon={<Clock3 size={23} />}
               title="MTTR & Backlog"
-              text="Measure mean time to resolution, aging tickets, open backlog and bottlenecks in service operations."
+              text="Measure mean time to resolution, ticket aging, open backlog and operational bottlenecks."
             />
 
             <BenefitCard
               icon={<UsersRound size={23} />}
               title="Executive Reporting"
-              text="Provide IT leaders with concise Power BI dashboards showing service performance and operational health."
+              text="Provide IT leaders with concise Power BI dashboards covering service health, trends and operational performance."
             />
           </div>
         </div>
@@ -581,16 +608,16 @@ export default function ServiceNowPowerBIPage() {
               </div>
 
               <h2 className="mt-3 text-[35px] font-black leading-tight text-[#102965]">
-                From ServiceNow API
+                From ServiceNow Data
                 <span className="block text-blue-600">
-                  to Business Intelligence
+                  to Governed Intelligence
                 </span>
               </h2>
 
               <p className="mt-5 text-[14px] leading-7 text-[#607690]">
-                SUFURIVRO creates a modern ServiceNow analytics architecture
-                using secure API ingestion, Microsoft Fabric and Microsoft
-                Power BI.
+                SUFURIVRO uses Microsoft Fabric and Microsoft Power BI to build
+                a reusable ServiceNow analytics architecture focused on
+                governance, consistency and self-service reporting.
               </p>
 
               <a
@@ -607,22 +634,22 @@ export default function ServiceNowPowerBIPage() {
                 {
                   no: "1",
                   title: "Connect",
-                  text: "Securely connect to ServiceNow APIs.",
+                  text: "Bring ServiceNow data into Microsoft Fabric.",
                 },
                 {
                   no: "2",
-                  title: "Ingest & Model",
-                  text: "Centralize ServiceNow data in Microsoft Fabric.",
+                  title: "Standardize",
+                  text: "Transform raw records into governed ITSM entities.",
                 },
                 {
                   no: "3",
-                  title: "Analyze",
-                  text: "Build governed Power BI semantic models.",
+                  title: "Model",
+                  text: "Build reusable KPI logic and semantic models.",
                 },
                 {
                   no: "4",
-                  title: "Share",
-                  text: "Deliver dashboards and self-service analytics.",
+                  title: "Analyze",
+                  text: "Deliver Power BI dashboards and self-service analytics.",
                 },
               ].map((item) => (
                 <div
@@ -661,7 +688,10 @@ export default function ServiceNowPowerBIPage() {
             />
           </div>
 
-          <ArrowRight className="hidden text-blue-300 md:block" size={20} />
+          <ArrowRight
+            className="hidden text-blue-300 md:block"
+            size={20}
+          />
 
           <div className="flex items-center justify-center">
             <img
@@ -671,7 +701,25 @@ export default function ServiceNowPowerBIPage() {
             />
           </div>
 
-          <ArrowRight className="hidden text-blue-300 md:block" size={20} />
+          <ArrowRight
+            className="hidden text-blue-300 md:block"
+            size={20}
+          />
+
+          <div className="rounded-lg border border-blue-100 bg-white px-5 py-3 text-center">
+            <div className="text-[9px] font-black uppercase tracking-[0.2em] text-blue-500">
+              SUFURIVRO
+            </div>
+
+            <div className="mt-1 text-[13px] font-black text-[#102965]">
+              Governed ITSM Model
+            </div>
+          </div>
+
+          <ArrowRight
+            className="hidden text-blue-300 md:block"
+            size={20}
+          />
 
           <div className="flex items-center justify-center">
             <img
@@ -694,27 +742,27 @@ export default function ServiceNowPowerBIPage() {
           <div className="relative flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <div className="text-[9px] font-black uppercase tracking-[0.3em] text-blue-100">
-                Ready to Modernize ServiceNow Reporting?
+                Ready to Modernize ServiceNow Analytics?
               </div>
 
               <h2 className="mt-2 text-[31px] font-black">
-                Turn ServiceNow Data Into Actionable Power BI Insights
+                Turn ServiceNow Data Into Governed Power BI Intelligence
               </h2>
 
               <p className="mt-2 max-w-[730px] text-[12px] leading-6 text-blue-50">
-                See how SUFURIVRO can connect ServiceNow to Microsoft Fabric
-                and Power BI through secure APIs without relying on a dedicated
-                direct connector.
+                See how SUFURIVRO combines ServiceNow, Microsoft Fabric and
+                Power BI to create reusable ITSM models, consistent KPIs,
+                dashboards and self-service analytics.
               </p>
             </div>
 
             <a
-  href="/book-a-demo"
-  className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
->
-  Book a Demo
-  <ArrowRight size={16} />
-</a>
+              href="/book-a-demo"
+              className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
+            >
+              Book a Demo
+              <ArrowRight size={16} />
+            </a>
           </div>
         </div>
       </section>

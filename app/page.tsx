@@ -1,4 +1,8 @@
+import type { Metadata } from "next";
+
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
 import {
   Search,
   Funnel,
@@ -14,7 +18,39 @@ import {
   Zap,
   Link2,
   Server,
+  ShieldCheck,
+  Gauge,
+  GitMerge,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "ITSM Analytics Platform Built on Microsoft Fabric",
+  description:
+    "SUFURIVRO transforms ITSM data into governed service intelligence using Microsoft Fabric and Power BI. Standardize service data, KPIs, semantic models, dashboards and self-service analytics across your ITSM ecosystem.",
+  alternates: {
+    canonical: "https://sufurivro.com",
+  },
+  openGraph: {
+    title: "ITSM Analytics Platform Built on Microsoft Fabric | SUFURIVRO",
+    description:
+      "Build a governed ITSM analytics layer with Microsoft Fabric and Power BI. Standardize service data, KPI definitions, dashboards and self-service reporting across multiple ITSM platforms.",
+    url: "https://sufurivro.com",
+    siteName: "SUFURIVRO",
+    type: "website",
+  },
+  keywords: [
+    "ITSM Analytics Platform",
+    "Microsoft Fabric ITSM Analytics",
+    "Power BI ITSM",
+    "ITSM Reporting",
+    "Service Intelligence Platform",
+    "ITSM Semantic Model",
+    "ITSM Dashboards",
+    "Self-Service ITSM Reporting",
+    "ServiceNow Power BI",
+    "IT Service Analytics",
+  ],
+};
 
 const Check = ({ orange = false }: { orange?: boolean }) => (
   <span
@@ -79,11 +115,7 @@ export default function Home() {
 
   return (
     <main className="overflow-hidden bg-white text-slate-900">
-      {/* =====================================================
-          HEADER
-      ====================================================== */}
-
-    <Header active="product" />
+      <Header active="product" />
 
       {/* =====================================================
           HERO
@@ -100,63 +132,66 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-[1650px] gap-10 px-6 py-20 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-10 lg:py-24">
           {/* HERO LEFT */}
 
-          <div className="max-w-[700px]">
+          <div className="max-w-[720px]">
             <div className="text-[13px] font-extrabold uppercase tracking-[0.34em] text-blue-500">
-              Connect · Unify · Report · Optimize
+              Connect · Standardize · Model · Analyze
             </div>
-<div className="mt-4 inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-[13px] font-bold text-orange-600">
-  Stop paying for connector licenses
-</div>
-          <h1 className="mt-6 font-black leading-[0.98] tracking-[-0.055em] text-[#132b73]">
-  <span className="block whitespace-nowrap text-[52px] lg:text-[58px] xl:text-[52px]">
-    Turn ITSM Data into
-  </span>
 
-  <span className="mt-2 block whitespace-nowrap text-[52px] text-[#2563ff] lg:text-[58px] xl:text-[52px]">
-    Actionable Intelligence
-  </span>
-</h1>
+            <div className="mt-4 inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-[13px] font-bold text-orange-600">
+              Built for Microsoft Fabric + Power BI
+            </div>
 
-            <p className="mt-7 max-w-[650px] text-[19px] leading-[1.55] text-[#4a5f8f]">
-  SUFURIVRO connects directly to your ITSM platforms through secure APIs —
-  without requiring expensive direct connectors or connector licenses.
-  Your data is ingested into Microsoft Fabric, modeled centrally, and made
-  available for self-service reporting and ready-to-use Power BI dashboards.
-</p>
+            <h1 className="mt-6 font-black leading-[0.98] tracking-[-0.055em] text-[#132b73]">
+              <span className="block text-[49px] lg:text-[57px] xl:text-[55px]">
+                Turn ITSM Data into
+              </span>
+
+              <span className="mt-2 block text-[49px] text-[#2563ff] lg:text-[57px] xl:text-[55px]">
+                Governed Service Intelligence
+              </span>
+            </h1>
+
+            <p className="mt-7 max-w-[680px] text-[19px] leading-[1.6] text-[#4a5f8f]">
+              SUFURIVRO creates a governed analytics layer across your ITSM
+              ecosystem. Bring service data into Microsoft Fabric, standardize
+              your ITSM entities and KPI definitions, and deliver trusted
+              semantic models, dashboards and self-service analytics through
+              Microsoft Power BI.
+            </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
                 href="/book-a-demo"
                 className="inline-flex h-[58px] min-w-[230px] items-center justify-center rounded-[14px] bg-gradient-to-r from-[#ff8a1f] to-[#ff6a00] px-8 text-[18px] font-bold text-white shadow-[0_10px_24px_rgba(255,122,26,0.28)] transition hover:-translate-y-0.5"
               >
-                Request Demo
+                Request a Demo
                 <span className="ml-3 text-[22px]">→</span>
               </a>
 
               <a
-                href="#integrations"
+                href="#architecture"
                 className="inline-flex h-[58px] min-w-[210px] items-center justify-center rounded-[14px] border-2 border-[#8db7ff] bg-white px-8 text-[18px] font-bold text-[#2563ff] shadow-[0_8px_18px_rgba(37,99,255,0.06)] transition hover:-translate-y-0.5"
               >
-                See Platform
+                See How It Works
               </a>
             </div>
 
-           <div className="mt-9 flex flex-wrap gap-x-8 gap-y-4 text-[15px] font-medium text-[#5c6f98]">
-  <div className="flex items-center gap-2">
-    <span className="text-xl font-bold text-orange-500">✓</span>
-    <span>No direct connector required</span>
-  </div>
+            <div className="mt-9 flex flex-wrap gap-x-8 gap-y-4 text-[15px] font-medium text-[#5c6f98]">
+              <div className="flex items-center gap-2">
+                <span className="text-xl font-bold text-orange-500">✓</span>
+                <span>Unified ITSM data model</span>
+              </div>
 
-  <div className="flex items-center gap-2">
-    <span className="text-xl font-bold text-orange-500">✓</span>
-    <span>No connector licensing cost</span>
-  </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xl font-bold text-orange-500">✓</span>
+                <span>Standardized KPI logic</span>
+              </div>
 
-  <div className="flex items-center gap-2">
-    <span className="text-xl font-bold text-orange-500">✓</span>
-    <span>Secure API-only data ingestion</span>
-  </div>
-</div>
+              <div className="flex items-center gap-2">
+                <span className="text-xl font-bold text-orange-500">✓</span>
+                <span>Governed Power BI analytics</span>
+              </div>
+            </div>
           </div>
 
           {/* HERO DASHBOARD */}
@@ -198,11 +233,11 @@ export default function Home() {
                 <div className="flex items-start justify-between">
                   <div>
                     <div className="text-lg font-extrabold text-blue-950">
-                      ITSM Overview
+                      ITSM Service Intelligence
                     </div>
 
                     <div className="text-xs text-slate-500">
-                      Real-time insights across all your ITSM data
+                      Governed insights across your service data
                     </div>
                   </div>
 
@@ -310,24 +345,90 @@ export default function Home() {
       </section>
 
       {/* =====================================================
-          INTEGRATION
+          POSITIONING
       ====================================================== */}
 
-      <section id="integrations" className="py-24">
+      <section className="border-b border-blue-100 bg-white py-16">
+        <div className="mx-auto max-w-[1350px] px-6 text-center lg:px-10">
+          <div className="text-[11px] font-black uppercase tracking-[0.3em] text-blue-600">
+            More Than Data Connectivity
+          </div>
+
+          <h2 className="mx-auto mt-4 max-w-[950px] text-[38px] font-black tracking-[-0.035em] text-blue-950 lg:text-[48px]">
+            The Analytics Layer Your ITSM Platform
+            <span className="block text-blue-600">
+              Doesn&apos;t Provide
+            </span>
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-[880px] text-[17px] leading-8 text-slate-500">
+            Connecting to ITSM data is only the first step. SUFURIVRO adds the
+            business logic required to turn raw service data into consistent,
+            governed and reusable analytics across your organization.
+          </p>
+
+          <div className="mt-11 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              {
+                icon: <GitMerge size={23} />,
+                title: "Standardized Data",
+                text: "Normalize ITSM entities and structures into a reusable analytics model.",
+              },
+              {
+                icon: <Gauge size={23} />,
+                title: "Governed KPIs",
+                text: "Define SLA, MTTR, backlog and service metrics consistently across reports.",
+              },
+              {
+                icon: <Layers3 size={23} />,
+                title: "Semantic Models",
+                text: "Create trusted Power BI semantic models designed specifically for ITSM analytics.",
+              },
+              {
+                icon: <BarChart3 size={23} />,
+                title: "Ready Analytics",
+                text: "Deliver dashboards and self-service reporting without rebuilding logic repeatedly.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[22px] border border-blue-100 bg-[#fbfdff] p-7 text-left"
+              >
+                <MiniIcon>{item.icon}</MiniIcon>
+
+                <h3 className="mt-5 text-[17px] font-black text-blue-950">
+                  {item.title}
+                </h3>
+
+                <p className="mt-2 text-[13px] leading-6 text-slate-500">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          ARCHITECTURE
+      ====================================================== */}
+
+      <section id="architecture" className="py-24">
         <div className="mx-auto max-w-[1450px] px-6 lg:px-10">
           <div className="text-center">
             <div className="text-xs font-black uppercase tracking-[0.26em] text-blue-600">
-              Complete Integration. Real Insights.
+              Governed ITSM Analytics Architecture
             </div>
 
             <h2 className="mt-4 text-4xl font-black tracking-tight text-blue-950 lg:text-5xl">
-              End-to-end integration, from source to insight
+              From ITSM Sources to Service Intelligence
             </h2>
 
             <p className="mx-auto mt-4 max-w-4xl text-lg leading-8 text-slate-500">
-              SUFURIVRO fully integrates multiple ITSM platforms, ingests data
-              automatically, models it in Microsoft Fabric, and exposes it for
-              reporting.
+              Use native connectors, secure vendor APIs or your existing data
+              integration patterns to bring ITSM data into Microsoft Fabric.
+              SUFURIVRO then standardizes the data and delivers a governed
+              analytics layer for Microsoft Power BI.
             </p>
           </div>
 
@@ -351,66 +452,66 @@ export default function Home() {
                 </h3>
 
                 <p className="mt-1 text-sm text-slate-400">
-                  Connect your existing tools
+                  Connect your service platforms
                 </p>
 
                 <div className="mt-6 space-y-3">
-  {[
-    {
-      name: "ServiceNow",
-      logo: "/logos/servicenow.png",
-    },
-    {
-      name: "Jira Service Management",
-      logo: "/logos/jira.svg",
-    },
-    {
-      name: "Freshservice",
-      logo: "/logos/freshservice.png",
-    },
-    {
-      name: "BMC Helix",
-      logo: "/logos/bmc.svg",
-    },
-  ].map((item) =>
-    item.name === "ServiceNow" ? (
-      <a
-        key={item.name}
-        href="/servicenow-power-bi"
-        className="flex items-center gap-3 rounded-xl px-1 py-1.5 transition hover:bg-blue-50"
-      >
-        <div className="flex h-8 w-8 items-center justify-center">
-          <img
-            src={item.logo}
-            alt={item.name}
-            className="h-6 w-6 object-contain"
-          />
-        </div>
+                  {[
+                    {
+                      name: "ServiceNow",
+                      logo: "/logos/servicenow.png",
+                    },
+                    {
+                      name: "Jira Service Management",
+                      logo: "/logos/jira.svg",
+                    },
+                    {
+                      name: "Freshservice",
+                      logo: "/logos/freshservice.png",
+                    },
+                    {
+                      name: "BMC Helix",
+                      logo: "/logos/bmc.svg",
+                    },
+                  ].map((item) =>
+                    item.name === "ServiceNow" ? (
+                      <a
+                        key={item.name}
+                        href="/servicenow-power-bi"
+                        className="flex items-center gap-3 rounded-xl px-1 py-1.5 transition hover:bg-blue-50"
+                      >
+                        <div className="flex h-8 w-8 items-center justify-center">
+                          <img
+                            src={item.logo}
+                            alt={item.name}
+                            className="h-6 w-6 object-contain"
+                          />
+                        </div>
 
-        <span className="text-[15px] font-medium text-slate-700 transition hover:text-blue-600">
-          {item.name}
-        </span>
-      </a>
-    ) : (
-      <div
-        key={item.name}
-        className="flex items-center gap-3 rounded-xl px-1 py-1.5"
-      >
-        <div className="flex h-8 w-8 items-center justify-center">
-          <img
-            src={item.logo}
-            alt={item.name}
-            className="h-6 w-6 object-contain"
-          />
-        </div>
+                        <span className="text-[15px] font-medium text-slate-700 transition hover:text-blue-600">
+                          {item.name}
+                        </span>
+                      </a>
+                    ) : (
+                      <div
+                        key={item.name}
+                        className="flex items-center gap-3 rounded-xl px-1 py-1.5"
+                      >
+                        <div className="flex h-8 w-8 items-center justify-center">
+                          <img
+                            src={item.logo}
+                            alt={item.name}
+                            className="h-6 w-6 object-contain"
+                          />
+                        </div>
 
-        <span className="text-[15px] text-slate-700">
-          {item.name}
-        </span>
-      </div>
-    )
-  )}
-</div>
+                        <span className="text-[15px] text-slate-700">
+                          {item.name}
+                        </span>
+                      </div>
+                    )
+                  )}
+                </div>
               </div>
 
               <div className="absolute -right-5 top-1/2 z-10 hidden -translate-y-1/2 text-4xl text-blue-500 lg:block">
@@ -418,7 +519,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* API PIPELINE */}
+            {/* INGEST + STANDARDIZE */}
 
             <div className="relative">
               <div className="h-full rounded-[28px] border border-blue-100 bg-white p-6 shadow-sm">
@@ -428,25 +529,26 @@ export default function Home() {
                   </div>
 
                   <MiniIcon>
-                    <Database size={22} />
+                    <GitMerge size={22} />
                   </MiniIcon>
                 </div>
 
                 <h3 className="text-[19px] font-black text-blue-950">
-                  API & Data Pipeline
+                  Ingest & Standardize
                 </h3>
 
                 <p className="mt-1 text-sm text-slate-400">
-                  Secure and automated ingestion
+                  Turn source data into trusted ITSM entities
                 </p>
 
                 <div className="mt-6 space-y-4 text-[15px] text-slate-700">
                   {[
-  "Secure API-only integration",
-  "No direct connector required",
-  "No connector licensing cost",
-  "Incremental data loads",
-].map((item) => (
+                    "Native connectors or vendor APIs",
+                    "Incremental data ingestion",
+                    "Entity standardization",
+                    "Data quality rules",
+                    "Cross-platform mapping",
+                  ].map((item) => (
                     <div key={item} className="flex items-center gap-3">
                       <Check />
                       <span>{item}</span>
@@ -483,15 +585,16 @@ export default function Home() {
                 </h3>
 
                 <p className="mt-1 text-sm text-slate-400">
-                  Centralized and scalable data
+                  Governed ITSM data foundation
                 </p>
 
                 <div className="mt-6 space-y-4 text-[15px] text-slate-700">
                   {[
-                    "Lakehouse and warehouse",
-                    "Scalable and secure",
-                    "Business-ready semantic model",
-                    "Optimized for analytics",
+                    "Lakehouse or Warehouse",
+                    "Canonical ITSM data model",
+                    "Reusable KPI framework",
+                    "Governed semantic model",
+                    "Enterprise scalability",
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3">
                       <Check />
@@ -518,7 +621,7 @@ export default function Home() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-orange-100">
                     <img
                       src="/logos/powerbi.svg"
-                      alt="Power BI"
+                      alt="Microsoft Power BI"
                       className="h-7 w-7 object-contain"
                     />
                   </div>
@@ -529,15 +632,16 @@ export default function Home() {
                 </h3>
 
                 <p className="mt-1 text-sm text-slate-400">
-                  Turn data into actionable insights
+                  Turn governed data into decisions
                 </p>
 
                 <div className="mt-6 space-y-4 text-[15px] text-slate-700">
                   {[
                     "Ready-to-use dashboards",
+                    "Governed KPI reporting",
                     "Ad-hoc analysis",
-                    "Drill-down to details",
-                    "Business user access",
+                    "Drill-through to detail",
+                    "Business user self-service",
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3">
                       <Check />
@@ -562,40 +666,43 @@ export default function Home() {
         <div className="mx-auto grid max-w-[1450px] gap-12 px-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:px-10">
           <div>
             <div className="text-xs font-black uppercase tracking-[0.26em] text-blue-600">
-              Empower Your Teams
+              Govern Once. Explore Everywhere.
             </div>
 
             <h2 className="mt-4 text-4xl font-black tracking-tight text-blue-950 lg:text-5xl">
-              Self-service reporting for every team
+              Self-service reporting
+              <span className="block text-blue-600">
+                built on trusted ITSM data
+              </span>
             </h2>
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-              Give IT managers, service owners, and analysts the freedom to
-              create, explore, filter and share insights — without depending
-              on manual report building every time.
+              Give IT managers, service owners, analysts and business teams the
+              ability to explore service data without recreating KPI logic in
+              every new report.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {[
                 {
                   icon: <Search size={23} />,
-                  title: "Ad-hoc analysis",
-                  text: "Explore your data from multiple angles in seconds.",
+                  title: "Ad-hoc Analysis",
+                  text: "Explore governed ITSM data from different perspectives in seconds.",
                 },
                 {
                   icon: <Funnel size={23} />,
-                  title: "Drill-through and filtering",
-                  text: "Filter, slice and dive into the details that matter.",
+                  title: "Drill & Filter",
+                  text: "Slice, filter and drill through from executive KPIs to operational detail.",
                 },
                 {
                   icon: <Database size={23} />,
-                  title: "Reusable semantic model",
-                  text: "Use one governed model for consistent reporting.",
+                  title: "Reusable Semantic Model",
+                  text: "Use one trusted model for consistent KPI definitions across reporting.",
                 },
                 {
                   icon: <Share2 size={23} />,
-                  title: "Shareable Power BI reports",
-                  text: "Create, share and collaborate with your team.",
+                  title: "Secure Sharing",
+                  text: "Publish and share Power BI insights using your existing governance model.",
                 },
               ].map((item) => (
                 <div
@@ -740,45 +847,51 @@ export default function Home() {
       <section id="features" className="py-24">
         <div className="mx-auto max-w-[1450px] px-6 lg:px-10">
           <div className="text-xs font-black uppercase tracking-[0.26em] text-blue-600">
-            Built for ITSM Analytics
+            ITSM Analytics Accelerators
           </div>
 
-          <h2 className="mt-3 text-4xl font-black tracking-tight text-blue-950 lg:text-5xl">
-            Everything you need for modern ITSM reporting
+          <h2 className="mt-3 max-w-[850px] text-4xl font-black tracking-tight text-blue-950 lg:text-5xl">
+            Everything between raw ITSM data and trusted business insight
           </h2>
+
+          <p className="mt-5 max-w-[800px] text-lg leading-8 text-slate-500">
+            SUFURIVRO focuses on the analytics work that starts after data
+            connectivity: standardization, modeling, KPI governance, reporting
+            and self-service business intelligence.
+          </p>
 
           <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-6">
             {[
               {
                 icon: <Layers3 size={22} />,
-                title: "Unified Data Model",
-                text: "Combine data from all your ITSM tools into one model.",
+                title: "Canonical ITSM Model",
+                text: "Standardize core ITSM entities into a consistent analytics structure.",
                 orange: true,
               },
               {
                 icon: <Clock3 size={22} />,
-                title: "SLA & MTTR Tracking",
-                text: "Monitor SLA, MTTR and response-time performance.",
+                title: "SLA & MTTR Logic",
+                text: "Create reusable service-management KPI definitions and measures.",
               },
               {
                 icon: <BarChart3 size={22} />,
-                title: "Incident Trend Analysis",
-                text: "Identify trends, bottlenecks and improvement opportunities.",
+                title: "Dashboard Accelerators",
+                text: "Start with reusable patterns for incident, SLA and service analytics.",
               },
               {
                 icon: <Network size={22} />,
-                title: "Full Integration Coverage",
-                text: "Connect multiple ITSM platforms through secure APIs.",
+                title: "Multi-Platform Analytics",
+                text: "Bring multiple service-management platforms into one analytics layer.",
               },
               {
                 icon: <UserRound size={22} />,
-                title: "Self-Service Reporting",
-                text: "Let business users build and explore reports.",
+                title: "Self-Service BI",
+                text: "Let users explore governed service data in Microsoft Power BI.",
               },
               {
                 icon: <Settings size={22} />,
-                title: "Custom KPI Reporting",
-                text: "Build the KPIs that matter to your organization.",
+                title: "Extensible KPIs",
+                text: "Adapt the analytics model to organization-specific service metrics.",
               },
             ].map((item) => (
               <div
@@ -811,21 +924,21 @@ export default function Home() {
         <div className="mx-auto grid max-w-[1450px] gap-12 px-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-center lg:px-10">
           <div>
             <div className="text-xs font-black uppercase tracking-[0.26em] text-blue-600">
-              Turn Data Into Better Decisions
+              Turn Governed Data Into Better Decisions
             </div>
 
             <h2 className="mt-4 text-4xl font-black tracking-tight text-blue-950 lg:text-5xl">
-              Powerful dashboards
+              ITSM dashboards
               <span className="block text-blue-600">
-                for better decisions
+                built on consistent KPI logic
               </span>
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              Get real-time operational visibility across your ITSM
-              environment. Monitor SLA performance, analyze incident trends,
-              identify backlog patterns and understand service performance —
-              all in one place.
+              Monitor service performance, SLA compliance, incident trends,
+              backlog, resolution times and executive ITSM KPIs using a
+              consistent semantic layer rather than rebuilding calculations in
+              every dashboard.
             </p>
 
             <a
@@ -958,41 +1071,41 @@ export default function Home() {
       </section>
 
       {/* =====================================================
-          BENEFITS
+          WHY SUFURIVRO
       ====================================================== */}
 
       <section className="py-20">
         <div className="mx-auto max-w-[1450px] px-6 lg:px-10">
           <div className="text-xs font-black uppercase tracking-[0.26em] text-blue-600">
-            Real Efficiency. Lasting Impact.
+            Why SUFURIVRO
           </div>
 
           <h2 className="mt-3 text-4xl font-black text-blue-950">
-            Why teams choose SUFURIVRO
+            Build analytics once. Reuse intelligence everywhere.
           </h2>
 
           <div className="mt-10 grid gap-7 md:grid-cols-2 xl:grid-cols-4">
             {[
               {
                 icon: <Database size={22} />,
-                title: "One source of truth",
-                text: "Unify data from all your ITSM tools for consistent and reliable insights.",
+                title: "One governed foundation",
+                text: "Create a consistent analytics layer instead of building isolated reporting logic for every ITSM source.",
               },
               {
                 icon: <Zap size={22} />,
-                title: "Reduce manual reporting",
-                text: "Automate data integration and eliminate manual reporting effort.",
+                title: "Accelerate reporting",
+                text: "Reuse models, KPI definitions and dashboard patterns instead of starting every report from scratch.",
                 orange: true,
               },
               {
                 icon: <Eye size={22} />,
-                title: "Empower self-service analytics",
-                text: "Give teams the freedom to explore data and make decisions.",
+                title: "Increase trust in KPIs",
+                text: "Use common business definitions for SLA, MTTR, backlog and operational service metrics.",
               },
               {
                 icon: <Link2 size={22} />,
-                title: "Connect all your ITSM data",
-                text: "Complete end-to-end integration across your ITSM ecosystem.",
+                title: "Reduce platform dependency",
+                text: "Keep your analytics architecture more independent from the reporting limitations of individual ITSM tools.",
               },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">
@@ -1016,36 +1129,126 @@ export default function Home() {
       </section>
 
       {/* =====================================================
+          MICROSOFT STACK
+      ====================================================== */}
+
+      <section className="border-y border-blue-100 bg-[#f8fbff] py-16">
+        <div className="mx-auto max-w-[1250px] px-6 lg:px-10">
+          <div className="grid gap-10 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
+            <div>
+              <div className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-600">
+                Built for the Microsoft Data Stack
+              </div>
+
+              <h2 className="mt-3 text-[34px] font-black leading-tight text-blue-950">
+                Make Microsoft Fabric
+                <span className="block text-blue-600">
+                  Your ITSM Intelligence Foundation
+                </span>
+              </h2>
+
+              <p className="mt-5 text-[15px] leading-7 text-slate-500">
+                SUFURIVRO complements Microsoft Fabric and Power BI by adding
+                the ITSM-specific modeling, KPI definitions and analytics
+                patterns required for service-management reporting.
+              </p>
+
+              <a
+                href="/microsoft-fabric-itsm"
+                className="mt-6 inline-flex items-center gap-2 text-[14px] font-bold text-blue-600"
+              >
+                Explore Microsoft Fabric + ITSM →
+              </a>
+            </div>
+
+            <div className="rounded-[26px] border border-blue-100 bg-white p-8 shadow-sm">
+              <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
+                <div className="flex min-h-[100px] min-w-[190px] items-center justify-center rounded-2xl border border-blue-100 bg-[#fbfdff] p-6">
+                  <div className="text-center">
+                    <Server
+                      size={27}
+                      className="mx-auto text-blue-600"
+                    />
+
+                    <div className="mt-3 text-[13px] font-black text-blue-950">
+                      ITSM Sources
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-2xl text-blue-300">→</div>
+
+                <div className="flex min-h-[100px] min-w-[190px] items-center justify-center rounded-2xl border border-blue-100 bg-[#fbfdff] p-6">
+                  <div className="text-center">
+                    <img
+                      src="/logos/fabric.png"
+                      alt="Microsoft Fabric"
+                      className="mx-auto h-8 w-8 object-contain"
+                    />
+
+                    <div className="mt-3 text-[13px] font-black text-blue-950">
+                      Microsoft Fabric
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-2xl text-blue-300">→</div>
+
+                <div className="flex min-h-[100px] min-w-[190px] items-center justify-center rounded-2xl border border-orange-100 bg-orange-50/30 p-6">
+                  <div className="text-center">
+                    <img
+                      src="/logos/powerbi.svg"
+                      alt="Microsoft Power BI"
+                      className="mx-auto h-8 w-8 object-contain"
+                    />
+
+                    <div className="mt-3 text-[13px] font-black text-blue-950">
+                      Power BI
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-7 flex items-center justify-center gap-2 text-center text-[12px] font-semibold text-slate-500">
+                <ShieldCheck size={17} className="text-blue-600" />
+                Governed ITSM data · Standardized KPIs · Reusable analytics
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
           CTA
       ====================================================== */}
 
-      <section id="contact" className="px-6 pb-10 lg:px-10">
+      <section id="contact" className="px-6 py-12 lg:px-10">
         <div className="relative mx-auto max-w-[1450px] overflow-hidden rounded-[28px] bg-gradient-to-r from-[#072a67] via-[#0e57c9] to-[#1877f2] px-8 py-12 text-white lg:px-14">
           <div className="absolute -right-10 -top-20 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
 
           <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <div className="text-xs font-black uppercase tracking-[0.24em] text-blue-200">
-                Let&apos;s build a smarter ITSM tomorrow
+                Build Your ITSM Intelligence Layer
               </div>
 
               <h2 className="mt-4 text-4xl font-black">
-                Ready to unify your ITSM reporting?
+                Ready to get more value from your ITSM data?
               </h2>
 
               <p className="mt-4 max-w-3xl text-blue-100">
-                Connect your ITSM tools, enable self-service reporting, and
-                give your teams a complete view of service performance.
+                See how SUFURIVRO can turn Microsoft Fabric and Power BI into a
+                governed analytics foundation for your ITSM ecosystem.
               </p>
             </div>
 
             <div className="shrink-0">
               <a
-  href="/book-a-demo"
-  className="rounded-xl bg-orange-500 px-8 py-4 font-black text-white shadow-lg shadow-orange-900/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
->
-  Schedule a Demo →
-</a>
+                href="/book-a-demo"
+                className="inline-flex rounded-xl bg-orange-500 px-8 py-4 font-black text-white shadow-lg shadow-orange-900/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
+              >
+                Book a Demo →
+              </a>
 
               <div className="mt-2 text-center text-[11px] text-blue-200">
                 No obligation. Just a conversation.
@@ -1055,49 +1258,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =====================================================
-          FOOTER
-      ====================================================== */}
-
-      <footer className="border-t border-blue-50 bg-white">
-        <div className="mx-auto flex max-w-[1450px] flex-col gap-8 px-6 py-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
-        <div className="flex items-center">
-  <img
-    src="/logo/logo.png"
-    alt="SUFURIVRO"
-    className="h-[44px] w-auto object-contain"
-  />
-</div>
-
-          <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-500">
-            <a href="#product">Product</a>
-                  <a
-        href="/servicenow-power-bi"
-        className="font-medium text-blue-700"
-      >
-        ServiceNow Power BI
-      </a>
-      <a href="/itsm-analytics">
-  ITSM Analytics
-</a>
-<a
-  href="/microsoft-fabric-itsm"
-  className="hover:text-blue-600"
->
-  Fabric + ITSM
-</a>
-            <a href="#integrations">Integrations</a>
-            <a href="#reporting">Reporting</a>
-            <a href="#dashboards">Dashboards</a>
-            <a href="#features">Features</a>
-            <a href="#contact">Contact</a>
-          </div>
-
-          <div className="text-xs text-slate-400">
-            © 2026 SUFURIVRO by Datamart Information Technologies. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <Footer active="product" />
     </main>
   );
 }

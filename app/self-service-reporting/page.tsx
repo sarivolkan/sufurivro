@@ -8,30 +8,43 @@ import {
   BarChart3,
   Check,
   Clock3,
+  Database,
   FileBarChart,
   Gauge,
   Layers3,
   PieChart,
   ShieldCheck,
+  Target,
   UsersRound,
   Zap,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Self-Service ITSM Reporting with Power BI",
+  title: "ITSM Self-Service Reporting with Power BI",
   description:
-    "Enable self-service ITSM reporting with Microsoft Power BI. Give IT and business users governed access to trusted ITSM data for ad-hoc analysis, dashboards and operational reporting.",
+    "Enable governed ITSM self-service reporting with Microsoft Power BI. Give users trusted semantic models, standardized KPIs and reusable service-management data through Microsoft Fabric and SUFURIVRO.",
   alternates: {
     canonical: "https://sufurivro.com/self-service-reporting",
   },
   openGraph: {
-    title: "Self-Service ITSM Reporting with Power BI | SUFURIVRO",
+    title: "ITSM Self-Service Reporting with Power BI | SUFURIVRO",
     description:
-      "Empower IT and business users with governed self-service analytics, ad-hoc ITSM reporting and reusable Power BI data models.",
+      "Give IT and business users freedom to explore ITSM data while keeping SLA, MTTR, backlog and service KPIs governed and consistent.",
     url: "https://sufurivro.com/self-service-reporting",
     siteName: "SUFURIVRO",
     type: "website",
   },
+  keywords: [
+    "ITSM Self-Service Reporting",
+    "Power BI Self-Service Analytics",
+    "ITSM Self-Service BI",
+    "Governed Self-Service BI",
+    "ITSM Semantic Model",
+    "Power BI ITSM Reporting",
+    "ITSM Ad-Hoc Reporting",
+    "Microsoft Fabric ITSM Analytics",
+    "ITSM Reporting",
+  ],
 };
 
 const BenefitCard = ({
@@ -108,36 +121,40 @@ export default function SelfServiceReportingPage() {
         <div className="relative mx-auto grid max-w-[1450px] gap-14 px-6 py-16 lg:grid-cols-[.88fr_1.12fr] lg:items-center lg:px-10 lg:py-20">
           {/* LEFT */}
 
-          <div className="max-w-[650px]">
+          <div className="max-w-[670px]">
             <div className="text-[11px] font-black uppercase tracking-[0.3em] text-blue-600">
-              Empower Your Teams With Data
+              Governed Self-Service ITSM Analytics
+            </div>
+
+            <div className="mt-4 inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-[12px] font-bold text-orange-600">
+              Freedom for Users. Governance for IT.
             </div>
 
             <h1 className="mt-5 font-black leading-[1.02] tracking-[-0.05em] text-[#102965]">
-              <span className="block text-[50px] lg:text-[58px]">
+              <span className="block text-[49px] lg:text-[57px]">
                 Self-Service Reporting
               </span>
 
-              <span className="mt-1 block text-[42px] text-blue-600 lg:text-[47px]">
-                for ITSM and Beyond
+              <span className="mt-1 block text-[41px] text-blue-600 lg:text-[47px]">
+                Without Losing KPI Governance
               </span>
             </h1>
 
-            <p className="mt-6 max-w-[625px] text-[17px] leading-[1.65] text-[#526a91]">
-              Give IT and business users governed access to trusted ITSM data
-              with Microsoft Power BI. Enable self-service reporting, ad-hoc
-              analysis and custom dashboards without requiring SQL skills or
-              constant support from technical teams.
+            <p className="mt-6 max-w-[640px] text-[17px] leading-[1.65] text-[#526a91]">
+              Give IT managers, analysts and business users the freedom to
+              explore service-management data while keeping SLA, MTTR, backlog
+              and operational KPI definitions consistent through a governed
+              Power BI semantic model.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-4">
-             <a
-  href="/book-a-demo"
-  className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
->
-  Book a Demo
-  <ArrowRight size={16} />
-</a>
+              <a
+                href="/book-a-demo"
+                className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
+              >
+                Book a Demo
+                <ArrowRight size={16} />
+              </a>
 
               <a
                 href="#benefits"
@@ -149,18 +166,18 @@ export default function SelfServiceReportingPage() {
 
             <div className="mt-7 flex flex-wrap gap-x-8 gap-y-3 text-[13px] font-medium text-[#395880]">
               <div className="flex items-center gap-2">
-                <Zap size={21} className="text-blue-600" />
-                No SQL skills required
+                <Layers3 size={21} className="text-blue-600" />
+                Trusted semantic model
               </div>
 
               <div className="flex items-center gap-2">
-                <BarChart3 size={21} className="text-blue-600" />
-                Ready-to-use data models
+                <Target size={21} className="text-blue-600" />
+                Standardized ITSM KPIs
               </div>
 
               <div className="flex items-center gap-2">
                 <ShieldCheck size={21} className="text-blue-600" />
-                Governed and secure access
+                Governed access
               </div>
             </div>
           </div>
@@ -186,13 +203,13 @@ export default function SelfServiceReportingPage() {
 
                     <div>Service Requests</div>
                     <div>SLA Performance</div>
-                    <div>User Satisfaction</div>
-                    <div>Trends & Forecast</div>
+                    <div>Service Performance</div>
+                    <div>Trends</div>
                     <div>Custom Reports</div>
                   </div>
 
                   <div className="mt-24 space-y-2 text-[7px] text-blue-200">
-                    <div>Help</div>
+                    <div>Semantic Model</div>
                     <div>Settings</div>
                   </div>
                 </div>
@@ -207,7 +224,7 @@ export default function SelfServiceReportingPage() {
                       </div>
 
                       <div className="mt-1 text-[8px] text-slate-400">
-                        Self-service ITSM analytics
+                        Governed self-service ITSM analytics
                       </div>
                     </div>
 
@@ -230,9 +247,9 @@ export default function SelfServiceReportingPage() {
                     />
 
                     <KpiCard
-                      label="Avg. Resolution"
-                      value="6.2 h"
-                      change="↓ 40%"
+                      label="Avg. MTTR"
+                      value="4.6 h"
+                      change="↓ 18%"
                     />
 
                     <KpiCard
@@ -249,15 +266,16 @@ export default function SelfServiceReportingPage() {
                       </div>
 
                       <div className="mt-4 flex h-[110px] items-end gap-1.5">
-                        {[45, 72, 62, 92, 78, 108, 85, 118, 96, 105, 88, 120].map(
-                          (height, index) => (
-                            <div
-                              key={index}
-                              className="flex-1 rounded-t bg-blue-400"
-                              style={{ height }}
-                            />
-                          )
-                        )}
+                        {[
+                          45, 72, 62, 92, 78, 108,
+                          85, 118, 96, 105, 88, 120,
+                        ].map((height, index) => (
+                          <div
+                            key={index}
+                            className="flex-1 rounded-t bg-blue-400"
+                            style={{ height }}
+                          />
+                        ))}
                       </div>
 
                       <div className="mt-2 flex justify-between text-[6px] text-slate-400">
@@ -296,10 +314,12 @@ export default function SelfServiceReportingPage() {
                           <span>Software</span>
                           <span>28%</span>
                         </div>
+
                         <div className="flex justify-between">
                           <span>Hardware</span>
                           <span>24%</span>
                         </div>
+
                         <div className="flex justify-between">
                           <span>Access</span>
                           <span>18%</span>
@@ -342,10 +362,67 @@ export default function SelfServiceReportingPage() {
       </section>
 
       {/* =====================================================
+          GOVERNED SELF SERVICE
+      ====================================================== */}
+
+      <section className="py-20">
+        <div className="mx-auto max-w-[1450px] px-6 lg:px-10">
+          <div className="mx-auto max-w-[920px] text-center">
+            <div className="text-[11px] font-black uppercase tracking-[0.28em] text-blue-600">
+              Governed Self-Service BI
+            </div>
+
+            <h2 className="mt-3 text-[36px] font-black tracking-[-0.035em] text-[#102965]">
+              Self-Service Should Not Mean
+              <span className="block text-blue-600">
+                Everyone Defines Their Own KPIs
+              </span>
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-[820px] text-[15px] leading-7 text-[#667c99]">
+              True self-service analytics gives users flexibility while keeping
+              business definitions consistent. SUFURIVRO separates governed
+              ITSM logic from individual report creation so users can explore
+              data without rebuilding core calculations.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            <BenefitCard
+              icon={<Target size={25} />}
+              title="Common KPI Definitions"
+              text="Use centrally defined SLA, MTTR, backlog, aging and service-performance calculations."
+            />
+
+            <BenefitCard
+              icon={<Layers3 size={25} />}
+              title="Reusable Semantic Model"
+              text="Give users a trusted Power BI model with governed dimensions, relationships and measures."
+            />
+
+            <BenefitCard
+              icon={<Database size={25} />}
+              title="Prepared ITSM Data"
+              text="Expose standardized service-management data instead of forcing every analyst to rebuild transformations."
+            />
+
+            <BenefitCard
+              icon={<ShieldCheck size={25} />}
+              title="Governed Access"
+              text="Use your Microsoft analytics environment to manage access to data and reporting content."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
           BENEFITS
       ====================================================== */}
 
-      <section id="benefits" className="py-20">
+      <section
+        id="benefits"
+        className="border-y border-blue-100 bg-[#f8fbff] py-20"
+      >
         <div className="mx-auto max-w-[1450px] px-6 lg:px-10">
           <div className="text-center">
             <div className="text-[11px] font-black uppercase tracking-[0.28em] text-blue-600">
@@ -353,12 +430,13 @@ export default function SelfServiceReportingPage() {
             </div>
 
             <h2 className="mt-3 text-[36px] font-black tracking-[-0.035em] text-[#102965]">
-              Make ITSM Data Accessible to Everyone
+              Give Users More Freedom Without Losing Control
             </h2>
 
             <p className="mx-auto mt-2 max-w-[760px] text-[15px] leading-6 text-[#667c99]">
-              Turn complex ITSM data into trusted, governed insights with
-              self-service Power BI reporting.
+              Empower teams to answer their own questions while preserving the
+              data model, KPI definitions and governance required for trusted
+              enterprise reporting.
             </p>
           </div>
 
@@ -366,25 +444,25 @@ export default function SelfServiceReportingPage() {
             <BenefitCard
               icon={<UsersRound size={25} />}
               title="Empower Your Users"
-              text="Let IT and business users create their own reports, explore ITSM data and answer questions without depending on a reporting team."
+              text="Let IT managers, analysts and business users explore governed service-management data independently."
             />
 
             <BenefitCard
               icon={<Clock3 size={25} />}
-              title="Save Time"
-              text="Reduce recurring report requests and give users faster access to the operational insights they need."
+              title="Reduce Reporting Bottlenecks"
+              text="Reduce repetitive reporting requests by providing users with trusted data they can explore directly."
             />
 
             <BenefitCard
               icon={<ShieldCheck size={25} />}
-              title="Stay Consistent"
-              text="Use governed semantic models and standardized ITSM KPIs to keep self-service reporting trusted and consistent."
+              title="Keep Reporting Consistent"
+              text="Prevent KPI fragmentation by keeping common ITSM definitions inside the governed semantic model."
             />
 
             <BenefitCard
               icon={<Gauge size={25} />}
-              title="Focus on What Matters"
-              text="Spend less time preparing data and more time analyzing service performance, trends and business outcomes."
+              title="Focus on Analysis"
+              text="Spend less time preparing and reconciling data and more time understanding service performance."
             />
           </div>
         </div>
@@ -394,21 +472,20 @@ export default function SelfServiceReportingPage() {
           USE CASES
       ====================================================== */}
 
-      <section className="border-y border-blue-100 bg-[#f8fbff] py-16">
+      <section className="py-20">
         <div className="mx-auto max-w-[1450px] px-6 lg:px-10">
           <div className="text-center">
             <div className="text-[10px] font-black uppercase tracking-[0.28em] text-blue-600">
-              Popular Use Cases
+              Flexible Reporting
             </div>
 
             <h2 className="mt-3 text-[34px] font-black text-[#102965]">
-              Flexible Self-Service Reporting for Real Business Needs
+              One Governed Model. Many Reporting Needs.
             </h2>
 
             <p className="mx-auto mt-2 max-w-[760px] text-[14px] leading-6 text-[#607690]">
-              Support operational reporting, management dashboards, ad-hoc
-              analysis and department-specific ITSM reporting from one governed
-              data model.
+              Use the same trusted ITSM semantic model for operational analysis,
+              management reporting, executive dashboards and ad-hoc questions.
             </p>
           </div>
 
@@ -416,25 +493,25 @@ export default function SelfServiceReportingPage() {
             <BenefitCard
               icon={<FileBarChart size={25} />}
               title="Operational Reporting"
-              text="Track incidents, service requests, changes, SLA performance and operational service metrics."
+              text="Track incidents, service requests, changes, SLA performance, backlog and day-to-day service metrics."
             />
 
             <BenefitCard
               icon={<BarChart3 size={25} />}
               title="Management Reporting"
-              text="Create ITSM dashboards and executive reports for service managers, IT leaders and business stakeholders."
+              text="Build service-management dashboards for team leads, service owners and IT management."
             />
 
             <BenefitCard
               icon={<PieChart size={25} />}
               title="Ad-Hoc Analysis"
-              text="Explore trends, investigate root causes and answer new business questions without building a report from scratch."
+              text="Explore trends and answer new business questions without redefining the underlying ITSM logic."
             />
 
             <BenefitCard
               icon={<Layers3 size={25} />}
-              title="Department Reporting"
-              text="Allow teams and departments to create their own views while using the same governed ITSM data foundation."
+              title="Department Views"
+              text="Create different reporting experiences for teams while keeping the same governed analytical foundation."
             />
           </div>
         </div>
@@ -444,14 +521,26 @@ export default function SelfServiceReportingPage() {
           HOW IT WORKS
       ====================================================== */}
 
-      <section className="py-20">
+      <section className="border-y border-blue-100 bg-[#f8fbff] py-20">
         <div className="mx-auto grid max-w-[1450px] gap-12 px-6 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:px-10">
           {/* DASHBOARD VISUAL */}
 
           <div className="relative">
             <div className="rounded-[22px] border border-blue-100 bg-white p-5 shadow-[0_18px_50px_rgba(20,70,140,.10)]">
-              <div className="text-[13px] font-black text-[#102965]">
-                Service Performance
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-[13px] font-black text-[#102965]">
+                    Service Performance
+                  </div>
+
+                  <div className="mt-1 text-[8px] text-slate-400">
+                    Powered by a governed semantic model
+                  </div>
+                </div>
+
+                <div className="rounded-full bg-blue-50 px-3 py-1 text-[8px] font-bold text-blue-600">
+                  Trusted Model
+                </div>
               </div>
 
               <div className="mt-4 grid grid-cols-3 gap-3">
@@ -460,11 +549,13 @@ export default function SelfServiceReportingPage() {
                   value="92.4%"
                   change="↑ 6%"
                 />
+
                 <KpiCard
-                  label="Avg. Resolution"
-                  value="6.2 h"
-                  change="↓ 40%"
+                  label="Avg. MTTR"
+                  value="4.6 h"
+                  change="↓ 18%"
                 />
+
                 <KpiCard
                   label="Incidents"
                   value="1,248"
@@ -531,9 +622,24 @@ export default function SelfServiceReportingPage() {
                 </div>
 
                 {[
-                  ["INC001234", "VPN connection issue", "High", "In Progress"],
-                  ["INC001235", "Email not working", "Medium", "Resolved"],
-                  ["INC001236", "CRM access request", "Low", "Resolved"],
+                  [
+                    "INC001234",
+                    "VPN connection issue",
+                    "High",
+                    "In Progress",
+                  ],
+                  [
+                    "INC001235",
+                    "Email not working",
+                    "Medium",
+                    "Resolved",
+                  ],
+                  [
+                    "INC001236",
+                    "CRM access request",
+                    "Low",
+                    "Resolved",
+                  ],
                 ].map((row) => (
                   <div
                     key={row[0]}
@@ -556,39 +662,39 @@ export default function SelfServiceReportingPage() {
             </div>
 
             <h2 className="mt-3 text-[35px] font-black leading-tight text-[#102965]">
-              From ITSM Data to Self-Service Insights
+              Govern the Model
               <span className="block text-blue-600">
-                in Just a Few Steps
+                Then Let Users Explore
               </span>
             </h2>
 
             <p className="mt-4 text-[14px] leading-7 text-[#607690]">
-              SUFURIVRO centralizes ITSM data, applies governed models and gives
-              business users a trusted foundation for Power BI self-service
-              analytics.
+              SUFURIVRO prepares a governed ITSM analytics layer so users can
+              build reports and perform ad-hoc analysis without recreating core
+              service-management definitions.
             </p>
 
             <div className="mt-7 space-y-5">
               {[
                 {
                   no: "1",
-                  title: "Connect",
-                  text: "Integrate ITSM data sources with Microsoft Fabric through secure data pipelines.",
+                  title: "Centralize",
+                  text: "Bring the required ITSM data into Microsoft Fabric and prepare it for analytics.",
                 },
                 {
                   no: "2",
-                  title: "Model",
-                  text: "Create governed semantic models with consistent ITSM KPIs, measures and relationships.",
+                  title: "Standardize",
+                  text: "Normalize service-management entities and apply common business definitions.",
                 },
                 {
                   no: "3",
-                  title: "Explore",
-                  text: "Let users build their own Power BI reports, dashboards and ad-hoc analyses.",
+                  title: "Govern",
+                  text: "Create reusable Power BI measures, dimensions, relationships and ITSM KPIs.",
                 },
                 {
                   no: "4",
-                  title: "Share",
-                  text: "Publish and distribute trusted self-service insights securely across the organization.",
+                  title: "Explore",
+                  text: "Let users create reports and perform analysis on top of the trusted semantic model.",
                 },
               ].map((item) => (
                 <div key={item.no} className="flex gap-4">
@@ -613,10 +719,10 @@ export default function SelfServiceReportingPage() {
       </section>
 
       {/* =====================================================
-          IMPACT / METRICS
+          IMPACT
       ====================================================== */}
 
-      <section className="px-6 pb-16 lg:px-10">
+      <section className="px-6 py-16 lg:px-10">
         <div className="mx-auto grid max-w-[1450px] gap-8 rounded-[22px] border border-blue-100 bg-[#f3f9ff] px-8 py-9 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
           <div>
             <div className="text-[10px] font-black uppercase tracking-[0.28em] text-blue-600">
@@ -624,13 +730,13 @@ export default function SelfServiceReportingPage() {
             </div>
 
             <h2 className="mt-2 text-[27px] font-black text-[#102965]">
-              Reduce Reporting Bottlenecks
+              Reduce Reporting Bottlenecks Without Creating KPI Chaos
             </h2>
 
-            <p className="mt-3 max-w-[650px] text-[13px] leading-6 text-[#607690]">
-              A governed self-service reporting model can reduce repetitive
-              report requests, accelerate analysis and give users more freedom
-              to explore trusted ITSM data.
+            <p className="mt-3 max-w-[690px] text-[13px] leading-6 text-[#607690]">
+              A governed self-service model gives users more independence while
+              keeping core service-management definitions controlled,
+              reusable and consistent across reports.
             </p>
           </div>
 
@@ -639,8 +745,9 @@ export default function SelfServiceReportingPage() {
               <div className="text-[30px] font-black text-blue-600">
                 Faster
               </div>
+
               <div className="mt-1 text-[10px] text-[#607690]">
-                reporting
+                analysis
               </div>
             </div>
 
@@ -648,8 +755,9 @@ export default function SelfServiceReportingPage() {
               <div className="text-[30px] font-black text-blue-600">
                 Fewer
               </div>
+
               <div className="mt-1 text-[10px] text-[#607690]">
-                ad-hoc requests
+                report requests
               </div>
             </div>
 
@@ -657,6 +765,7 @@ export default function SelfServiceReportingPage() {
               <div className="text-[30px] font-black text-blue-600">
                 More
               </div>
+
               <div className="mt-1 text-[10px] text-[#607690]">
                 user autonomy
               </div>
@@ -676,27 +785,27 @@ export default function SelfServiceReportingPage() {
           <div className="relative flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <div className="text-[9px] font-black uppercase tracking-[0.3em] text-blue-100">
-                Ready to Empower Your Teams?
+                Govern Once. Explore Everywhere.
               </div>
 
               <h2 className="mt-2 text-[31px] font-black">
-                Start Your Self-Service ITSM Reporting Journey
+                Give Your Teams Trusted Self-Service ITSM Analytics
               </h2>
 
-              <p className="mt-2 max-w-[730px] text-[12px] leading-6 text-blue-50">
-                See how SUFURIVRO can help you deliver governed self-service
-                analytics, reusable Power BI models and trusted ITSM reporting
-                across your organization.
+              <p className="mt-2 max-w-[760px] text-[12px] leading-6 text-blue-50">
+                See how SUFURIVRO combines Microsoft Fabric, governed ITSM
+                semantic models and Power BI to support flexible reporting
+                without sacrificing consistency.
               </p>
             </div>
 
-           <a
-  href="/book-a-demo"
-  className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
->
-  Book a Demo
-  <ArrowRight size={16} />
-</a>
+            <a
+              href="/book-a-demo"
+              className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
+            >
+              Book a Demo
+              <ArrowRight size={16} />
+            </a>
           </div>
         </div>
       </section>
