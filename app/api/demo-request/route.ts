@@ -5,7 +5,6 @@ export const runtime = "nodejs";
 
 function clean(value: unknown, maxLength = 3000) {
   if (typeof value !== "string") return "";
-
   return value.trim().slice(0, maxLength);
 }
 
@@ -18,14 +17,22 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#039;");
 }
 
-function validEmail(email: string) {
+function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 export async function POST(request: Request) {
   try {
-    if (!process.env.RESEND_API_KEY) {
-      console.error("RESEND_API_KEY is missing.");
+    const apiKey = process.env.RESEND_API_KEY;
+    const recipient = process.env.DEMO_RECIPIENT_EMAIL;
+    const fromEmail = process.env.SUFURIVRO_FROM_EMAIL;
+
+    if (!apiKey || !recipient || !fromEmail) {
+      console.error("Missing email environment variables", {
+        hasApiKey: Boolean(apiKey),
+        hasRecipient: Boolean(recipient),
+        hasFromEmail: Boolean(fromEmail),
+      });
 
       return NextResponse.json(
         {
@@ -48,14 +55,11 @@ export async function POST(request: Request) {
     const message = clean(body.message, 3000);
 
     const consent = body.consent === true;
-
-    // Honeypot bot protection
     const website = clean(body.website, 200);
 
+    // Honeypot: bot doldurursa gerçek mail göndermeden başarılı dön.
     if (website) {
-      return NextResponse.json({
-        success: true,
-      });
+      return NextResponse.json({ success: true });
     }
 
     if (
@@ -75,7 +79,7 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!validEmail(email)) {
+    if (!isValidEmail(email)) {
       return NextResponse.json(
         {
           success: false,
@@ -85,49 +89,22 @@ export async function POST(request: Request) {
       );
     }
 
-    const recipient =
-      process.env.DEMO_RECIPIENT_EMAIL;
-
-    const fromEmail =
-      process.env.SUFURIVRO_FROM_EMAIL;
-
-    if (!recipient || !fromEmail) {
-      console.error(
-        "DEMO_RECIPIENT_EMAIL or SUFURIVRO_FROM_EMAIL is missing."
-      );
-
-      return NextResponse.json(
-        {
-          success: false,
-          message: "Email service is not configured.",
-        },
-        { status: 500 }
-      );
-    }
-
-    const resend = new Resend(
-      process.env.RESEND_API_KEY
-    );
+    const resend = new Resend(apiKey);
 
     const safeFirstName = escapeHtml(firstName);
     const safeLastName = escapeHtml(lastName);
     const safeEmail = escapeHtml(email);
     const safeCompany = escapeHtml(company);
-    const safeJobTitle = escapeHtml(
-      jobTitle || "Not provided"
-    );
-    const safePlatform = escapeHtml(
-      itsmPlatform || "Not provided"
-    );
+    const safeJobTitle = escapeHtml(jobTitle || "Not provided");
+    const safePlatform = escapeHtml(itsmPlatform || "Not provided");
     const safeInterest = escapeHtml(interest);
     const safeMessage = escapeHtml(
       message || "No message provided."
     ).replaceAll("\n", "<br />");
 
-    const { error } = await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: fromEmail,
       to: [recipient],
-
       replyTo: email,
 
       subject: `New SUFURIVRO Demo Request - ${company}`,
@@ -144,7 +121,7 @@ export async function POST(request: Request) {
           <div
             style="
               background: #0b2a66;
-              padding: 24px 30px;
+              padding: 26px 30px;
               border-radius: 14px 14px 0 0;
             "
           >
@@ -160,9 +137,9 @@ export async function POST(request: Request) {
 
             <div
               style="
-                color: #bcd4ff;
+                color: #bdd4ff;
                 font-size: 13px;
-                margin-top: 6px;
+                margin-top: 7px;
               "
             >
               ITSM Analytics & Service Intelligence Platform
@@ -185,55 +162,55 @@ export async function POST(request: Request) {
               "
             >
               <tr>
-                <td style="padding: 10px 0; font-weight: bold;">
+                <td style="padding:10px 0;font-weight:bold;width:180px;">
                   Name
                 </td>
-                <td style="padding: 10px 0;">
+                <td style="padding:10px 0;">
                   ${safeFirstName} ${safeLastName}
                 </td>
               </tr>
 
               <tr>
-                <td style="padding: 10px 0; font-weight: bold;">
+                <td style="padding:10px 0;font-weight:bold;">
                   Business Email
                 </td>
-                <td style="padding: 10px 0;">
+                <td style="padding:10px 0;">
                   ${safeEmail}
                 </td>
               </tr>
 
               <tr>
-                <td style="padding: 10px 0; font-weight: bold;">
+                <td style="padding:10px 0;font-weight:bold;">
                   Company
                 </td>
-                <td style="padding: 10px 0;">
+                <td style="padding:10px 0;">
                   ${safeCompany}
                 </td>
               </tr>
 
               <tr>
-                <td style="padding: 10px 0; font-weight: bold;">
+                <td style="padding:10px 0;font-weight:bold;">
                   Job Title
                 </td>
-                <td style="padding: 10px 0;">
+                <td style="padding:10px 0;">
                   ${safeJobTitle}
                 </td>
               </tr>
 
               <tr>
-                <td style="padding: 10px 0; font-weight: bold;">
+                <td style="padding:10px 0;font-weight:bold;">
                   ITSM Platform
                 </td>
-                <td style="padding: 10px 0;">
+                <td style="padding:10px 0;">
                   ${safePlatform}
                 </td>
               </tr>
 
               <tr>
-                <td style="padding: 10px 0; font-weight: bold;">
+                <td style="padding:10px 0;font-weight:bold;">
                   Interested In
                 </td>
-                <td style="padding: 10px 0;">
+                <td style="padding:10px 0;">
                   ${safeInterest}
                 </td>
               </tr>
@@ -241,10 +218,10 @@ export async function POST(request: Request) {
 
             <div
               style="
-                margin-top: 24px;
-                padding: 20px;
+                margin-top: 25px;
                 background: #f6faff;
                 border-radius: 10px;
+                padding: 20px;
               "
             >
               <div
@@ -258,8 +235,8 @@ export async function POST(request: Request) {
 
               <div
                 style="
-                  line-height: 1.65;
                   color: #526a91;
+                  line-height: 1.7;
                 "
               >
                 ${safeMessage}
@@ -268,13 +245,12 @@ export async function POST(request: Request) {
 
             <div
               style="
-                margin-top: 24px;
+                margin-top: 25px;
                 font-size: 12px;
                 color: #8091aa;
               "
             >
-              This lead was generated from
-              sufurivro.com/book-a-demo
+              Submitted from sufurivro.com/book-a-demo
             </div>
           </div>
         </div>
@@ -287,27 +263,24 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           success: false,
-          message:
-            "Your request could not be sent. Please try again.",
+          message: "Your request could not be sent. Please try again.",
         },
         { status: 500 }
       );
     }
 
+    console.log("Demo request sent:", data?.id);
+
     return NextResponse.json({
       success: true,
     });
   } catch (error) {
-    console.error(
-      "Demo request API error:",
-      error
-    );
+    console.error("Demo request API error:", error);
 
     return NextResponse.json(
       {
         success: false,
-        message:
-          "Something went wrong. Please try again.",
+        message: "Something went wrong. Please try again.",
       },
       { status: 500 }
     );
