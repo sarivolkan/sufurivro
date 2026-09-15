@@ -126,7 +126,7 @@ export default function Home() {
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
-                href="#contact"
+                href="/book-a-demo"
                 className="inline-flex h-[58px] min-w-[230px] items-center justify-center rounded-[14px] bg-gradient-to-r from-[#ff8a1f] to-[#ff6a00] px-8 text-[18px] font-bold text-white shadow-[0_10px_24px_rgba(255,122,26,0.28)] transition hover:-translate-y-0.5"
               >
                 Request Demo
