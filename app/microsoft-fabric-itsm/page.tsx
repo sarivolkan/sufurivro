@@ -119,13 +119,13 @@ export default function MicrosoftFabricITSMPage() {
             </p>
 
             <div className="mt-7 flex flex-wrap gap-4">
-              <a
-                href="/contact"
-                className="inline-flex h-[54px] min-w-[185px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-7 text-[15px] font-bold text-white shadow-[0_12px_24px_rgba(249,115,22,0.24)] transition hover:-translate-y-0.5"
-              >
-                Book a Demo
-                <ArrowRight size={17} />
-              </a>
+            <a
+  href="/book-a-demo"
+  className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
+>
+  Book a Demo
+  <ArrowRight size={16} />
+</a>
 
               <a
                 href="#architecture"
@@ -630,12 +630,13 @@ export default function MicrosoftFabricITSMPage() {
             </p>
           </div>
 
-          <a
-            href="/contact"
-            className="relative inline-flex shrink-0 items-center justify-center rounded-xl bg-orange-500 px-8 py-4 text-[15px] font-bold text-white shadow-lg shadow-orange-200 transition hover:-translate-y-0.5 hover:bg-orange-600"
-          >
-            Book a Demo →
-          </a>
+        <a
+  href="/book-a-demo"
+  className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
+>
+  Book a Demo
+  <ArrowRight size={16} />
+</a>
         </div>
       </section>
 

@@ -85,7 +85,7 @@ export default function Header({ active }: HeaderProps) {
 
         
   <a
-  href="/contact"
+  href="/book-a-demo"
   className={active === "contact" ? selected : normal}
 >
   Contact
@@ -95,7 +95,7 @@ export default function Header({ active }: HeaderProps) {
         {/* CTA */}
 
         <a
-          href="/#contact"
+          href="/book-a-demo"
           className="shrink-0 whitespace-nowrap rounded-xl bg-orange-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-orange-200 transition hover:-translate-y-0.5 hover:bg-orange-600"
         >
           Book a Demo →

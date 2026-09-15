@@ -709,12 +709,12 @@ export default function ServiceNowPowerBIPage() {
             </div>
 
             <a
-              href="/contact"
-              className="inline-flex shrink-0 items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 hover:bg-orange-600"
-            >
-              Book a Demo
-              <ArrowRight size={16} />
-            </a>
+  href="/book-a-demo"
+  className="inline-flex min-w-[215px] items-center justify-center gap-3 rounded-xl bg-orange-500 px-8 py-4 text-[14px] font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:bg-orange-600"
+>
+  Book a Demo
+  <ArrowRight size={16} />
+</a>
           </div>
         </div>
       </section>
